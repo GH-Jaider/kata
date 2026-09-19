@@ -1,5 +1,7 @@
 # Kata
 
+**Live: [gh-jaider.github.io/kata](https://gh-jaider.github.io/kata/)**. Open it on the iPad or the Mac and add it to the home screen; it works offline after the first visit.
+
 A daily drawing session on a real curriculum. Kata plans one short session a day, runs the clock, counts your pages and keeps your photos side by side so you can see the change. Poster look: one flat colour per block, giant type, almost no chrome.
 
 The curriculum it ships with is [Drawabox](https://drawabox.com), the free fundamentals course. Kata only indexes its structure (units, exercises, quotas, links) and writes its own short exercise cards. The lessons live on drawabox.com. Kata is not affiliated with Drawabox.
