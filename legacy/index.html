@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kata</title>
+<meta name="description" content="Daily drawing practice sessions on a real curriculum">
+<meta name="theme-color" content="#F4F3EF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F0F10" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Kata">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<script>
+  // Theme chosen in Settings, applied before first paint so nothing flashes.
+  try {
+    var t = localStorage.getItem('kata.theme');
+    if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+  } catch (e) {}
+</script>
+<link rel="stylesheet" href="css/app.css">
+<script type="module" src="js/app.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<noscript><p style="padding:24px">Kata needs JavaScript.</p></noscript>
+</body>
+</html>
