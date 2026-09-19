@@ -1,0 +1,630 @@
+{
+  "id": "drawabox",
+  "name": "Drawabox",
+  "site": "https://drawabox.com",
+  "attribution": "This file only indexes the structure of the free Drawabox course (lesson names, exercise names, homework quotas and links). The lessons themselves live on drawabox.com and belong to Drawabox Art Instruction Inc. Kata is not affiliated with Drawabox.",
+  "links": {
+    "start": "https://drawabox.com/lesson/0",
+    "fiftyPercent": "https://drawabox.com/lesson/0/2/50percent",
+    "warmups": "https://drawabox.com/lesson/0/3/warmups",
+    "tools": "https://drawabox.com/lesson/0/4",
+    "digital": "https://drawabox.com/lesson/0/faq/digital",
+    "feedback": "https://drawabox.com/lesson/0/3/gettingfeedback",
+    "community": "https://drawabox.com/community/homework/"
+  },
+  "rules": {
+    "warmupMinutes": [
+      10,
+      15
+    ],
+    "warmupNote": "Before each study sitting, spend 10 to 15 minutes on exercises from lessons you have already done. You do not need a full page: do what fits in the time. Rotate so nothing gets abandoned.",
+    "fiftyPercentNote": "The 50% rule: at least half of your total drawing time goes to drawing for its own sake, not to this course. It counts outside the study sittings, not inside them.",
+    "toolsNote": "Drawabox recommends 0.5 fineliners on printer paper because the marks cannot be undone. Digital is allowed for community feedback, but the course calls it an uphill climb. Kata does not care which one you use: log the medium and keep going."
+  },
+  "order": [
+    "l0",
+    "l1",
+    "c250boxes",
+    "l2",
+    "l3",
+    "l4",
+    "l5",
+    "c250cylinders",
+    "l6",
+    "c25wheels",
+    "l7"
+  ],
+  "parallel": [
+    "c25textures"
+  ],
+  "parts": [
+    {
+      "id": "basics",
+      "name": "Part One: The Basics",
+      "units": [
+        {
+          "id": "l0",
+          "kind": "lesson",
+          "name": "Lesson 0: Getting started",
+          "short": "Lesson 0",
+          "url": "https://drawabox.com/lesson/0",
+          "after": [],
+          "summary": "Mindset, the 50% rule, how warm-ups work and which tools to use. Read it before drawing anything.",
+          "tools": "None yet. Decide on paper or tablet.",
+          "exercises": [
+            {
+              "id": "l0-read",
+              "name": "Read Lesson 0",
+              "kind": "reading",
+              "quota": 1,
+              "unit": "read",
+              "url": "https://drawabox.com/lesson/0",
+              "warmup": false,
+              "note": "Mindset, the 50% rule, warm-ups and tools."
+            }
+          ]
+        },
+        {
+          "id": "l1",
+          "kind": "lesson",
+          "name": "Lesson 1: Lines, ellipses and boxes",
+          "short": "Lesson 1",
+          "url": "https://drawabox.com/lesson/1",
+          "after": [
+            "l0"
+          ],
+          "summary": "Drawing from the shoulder, the ghosting method, ellipses and the first boxes in perspective. Submit all three sections together for feedback.",
+          "tools": "Fineliner on printer paper. Ballpoint accepted in a pinch, only in this lesson.",
+          "exercises": [
+            {
+              "id": "l1-superimposed",
+              "name": "Superimposed lines",
+              "quota": 2,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/1/superimposedlines",
+              "warmup": true,
+              "note": "Trace over each line several times from the same start point."
+            },
+            {
+              "id": "l1-ghostedlines",
+              "name": "Ghosted lines",
+              "quota": 1,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/1/ghostedlines",
+              "warmup": true,
+              "note": "Plan, ghost, then execute in one confident stroke."
+            },
+            {
+              "id": "l1-ghostedplanes",
+              "name": "Ghosted planes",
+              "quota": 2,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/1/ghostedplanes",
+              "warmup": true,
+              "note": "Planes built from ghosted lines, with their diagonals and centre lines."
+            },
+            {
+              "id": "l1-tables",
+              "name": "Tables of ellipses",
+              "quota": 2,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/1/tablesofellipses",
+              "warmup": true,
+              "note": "Rows of ellipses that touch each other, drawn through two or three times."
+            },
+            {
+              "id": "l1-ellipsesinplanes",
+              "name": "Ellipses in planes",
+              "quota": 2,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/1/ellipsesinplanes",
+              "warmup": true,
+              "note": "One ellipse per plane, touching all four sides."
+            },
+            {
+              "id": "l1-funnels",
+              "name": "Funnels",
+              "quota": 1,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/1/funnels",
+              "warmup": true,
+              "note": "Ellipses aligned to a minor axis, widening outward."
+            },
+            {
+              "id": "l1-plotted",
+              "name": "Plotted perspective",
+              "quota": 1,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/1/plottedperspective",
+              "warmup": true,
+              "note": "Three frames per page, boxes drawn with a ruler to the vanishing points."
+            },
+            {
+              "id": "l1-rough",
+              "name": "Rough perspective",
+              "quota": 2,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/1/roughperspective",
+              "warmup": true,
+              "note": "Three frames per page, freehand boxes in one point perspective, then check with extensions."
+            },
+            {
+              "id": "l1-rotated",
+              "name": "Rotated boxes",
+              "quota": 1,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/1/rotatedboxes",
+              "warmup": true,
+              "note": "A grid of boxes rotating away from the centre. Hard on purpose."
+            },
+            {
+              "id": "l1-organic",
+              "name": "Organic perspective",
+              "quota": 2,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/1/organicperspective",
+              "warmup": true,
+              "note": "Boxes flowing along a line, getting bigger as they come closer."
+            }
+          ]
+        },
+        {
+          "id": "l2",
+          "kind": "lesson",
+          "name": "Lesson 2: Contour lines, texture and construction",
+          "short": "Lesson 2",
+          "url": "https://drawabox.com/lesson/2",
+          "after": [
+            "c250boxes"
+          ],
+          "summary": "Thinking in 3D, how texture sits on a surface, and combining forms. Do the box challenge first. Submit all three sections together.",
+          "tools": "Fineliner. Brush pen only for filling large black areas.",
+          "exercises": [
+            {
+              "id": "l2-arrows",
+              "name": "Organic arrows",
+              "quota": 2,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/2/organicarrows",
+              "warmup": true,
+              "note": "Ribbons that twist through space and get wider as they come closer."
+            },
+            {
+              "id": "l2-contour",
+              "name": "Sausages with contour lines",
+              "quota": 2,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/2/contourlines",
+              "warmup": true,
+              "note": "One page of contour ellipses, one page of contour curves."
+            },
+            {
+              "id": "l2-texture",
+              "name": "Texture analysis",
+              "quota": 1,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/2/textureanalysis",
+              "warmup": true,
+              "note": "First texture is crumpled paper, as bold black and white shapes. Then two more."
+            },
+            {
+              "id": "l2-dissections",
+              "name": "Dissections",
+              "quota": 2,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/2/dissections",
+              "warmup": true,
+              "note": "Textures wrapped around sausage forms."
+            },
+            {
+              "id": "l2-intersections",
+              "name": "Form intersections",
+              "quota": 4,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/2/formintersections",
+              "warmup": true,
+              "note": "First page boxes only. Then mix boxes, cylinders, spheres and cones."
+            },
+            {
+              "id": "l2-organicint",
+              "name": "Organic intersections",
+              "quota": 2,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/2/organicintersections",
+              "warmup": true,
+              "note": "Sausages piled on each other, sagging under gravity, with cast shadows."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "challenges",
+      "name": "Challenges and Drills",
+      "units": [
+        {
+          "id": "c250boxes",
+          "kind": "challenge",
+          "name": "250 Box Challenge",
+          "short": "250 boxes",
+          "url": "https://drawabox.com/lesson/250boxes",
+          "after": [
+            "l1"
+          ],
+          "summary": "Freely rotated boxes in three point perspective, five or six per page, with line extensions after every page. Date the page and number every box.",
+          "tools": "Fineliner or ballpoint, on A4 or letter paper.",
+          "exercises": [
+            {
+              "id": "c250boxes-boxes",
+              "name": "Boxes with line extensions",
+              "quota": 250,
+              "unit": "boxes",
+              "url": "https://drawabox.com/lesson/250boxes",
+              "warmup": true,
+              "note": "Five or six boxes per page, no more, no less. Extend the lines before starting the next page.",
+              "stages": [
+                {
+                  "to": 50,
+                  "name": "The First Fifty",
+                  "url": "https://drawabox.com/lesson/250boxes/2",
+                  "note": "Vanishing points marked on the page. Dramatic foreshortening. Number 1 to 50."
+                },
+                {
+                  "to": 100,
+                  "name": "The Next Fifty",
+                  "url": "https://drawabox.com/lesson/250boxes/3",
+                  "note": "No vanishing points on the page. Shallow foreshortening. Number 51 to 100."
+                },
+                {
+                  "to": 250,
+                  "name": "The Last 150",
+                  "url": "https://drawabox.com/lesson/250boxes/4",
+                  "note": "No vanishing points. Mix dramatic and shallow foreshortening. Number 101 to 250."
+                }
+              ],
+              "perPage": 6
+            }
+          ]
+        },
+        {
+          "id": "c250cylinders",
+          "kind": "challenge",
+          "name": "250 Cylinder Challenge",
+          "short": "250 cylinders",
+          "url": "https://drawabox.com/lesson/250cylinders",
+          "after": [
+            "l5"
+          ],
+          "summary": "Allowed after Lesson 2, recommended between Lessons 5 and 6. Check your errors after every page, not after every cylinder.",
+          "tools": "Fineliner ideally, or ballpoint.",
+          "exercises": [
+            {
+              "id": "c250cyl-axis",
+              "name": "Cylinders around a minor axis",
+              "quota": 150,
+              "unit": "cylinders",
+              "url": "https://drawabox.com/lesson/250cylinders/1/stage1",
+              "warmup": true,
+              "note": "Vary the foreshortening. Check the minor axis of every ellipse after each page.",
+              "perPage": 6
+            },
+            {
+              "id": "c250cyl-box",
+              "name": "Cylinders in a box",
+              "quota": 100,
+              "unit": "cylinders",
+              "url": "https://drawabox.com/lesson/250cylinders/1/stage2",
+              "warmup": true,
+              "note": "Build the box first, then the cylinder inside. Check the extensions after each page.",
+              "perPage": 4
+            }
+          ]
+        },
+        {
+          "id": "c25wheels",
+          "kind": "challenge",
+          "name": "25 Wheel Challenge",
+          "short": "25 wheels",
+          "url": "https://drawabox.com/lesson/25wheels",
+          "after": [
+            "l6",
+            "c250cylinders"
+          ],
+          "summary": "Wheels from reference at different angles. Do it after Lesson 6 and before Lesson 7.",
+          "tools": "Ballpoint, and an ellipse guide if you have one.",
+          "exercises": [
+            {
+              "id": "c25wheels-wheels",
+              "name": "Wheels from reference",
+              "quota": 25,
+              "unit": "wheels",
+              "url": "https://drawabox.com/lesson/25wheels/1/assignment",
+              "warmup": false,
+              "note": "Different angles. Draw them big if freehanding.",
+              "perPage": 2
+            }
+          ]
+        },
+        {
+          "id": "c25textures",
+          "kind": "challenge",
+          "name": "25 Texture Challenge",
+          "short": "25 textures",
+          "url": "https://drawabox.com/lesson/25textures",
+          "after": [
+            "l2"
+          ],
+          "summary": "The texture analysis from Lesson 2, 25 rows in total. Meant to run in parallel with the other lessons, one row at a time. Do not grind it.",
+          "tools": "Fineliner. Brush pen for large black areas.",
+          "exercises": [
+            {
+              "id": "c25textures-rows",
+              "name": "Texture analysis rows",
+              "quota": 25,
+              "unit": "rows",
+              "url": "https://drawabox.com/lesson/2/textureanalysis",
+              "warmup": false,
+              "note": "One row per sitting, spread across weeks.",
+              "perPage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "construction",
+      "name": "Part Two: Constructional Drawing",
+      "units": [
+        {
+          "id": "l3",
+          "kind": "lesson",
+          "name": "Lesson 3: Applying construction to plants",
+          "short": "Lesson 3",
+          "url": "https://drawabox.com/lesson/3",
+          "after": [
+            "l2"
+          ],
+          "summary": "Flow and organic forms. Draw from high resolution reference. Demo follow-alongs may count for less than half of the plant pages.",
+          "tools": "Fineliner. Brush pen for dark areas, not for lines.",
+          "exercises": [
+            {
+              "id": "l3-arrows",
+              "name": "Organic arrows (review)",
+              "quota": 1,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/2/organicarrows",
+              "warmup": false,
+              "sameAs": "l2-arrows",
+              "note": "Same exercise as Lesson 2."
+            },
+            {
+              "id": "l3-leaves",
+              "name": "Leaves",
+              "quota": 1,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/3/2/exerciseleaves",
+              "warmup": true,
+              "note": "Flow line first, then the edges, then the details."
+            },
+            {
+              "id": "l3-branches",
+              "name": "Branches",
+              "quota": 1,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/3/2/exercisebranches",
+              "warmup": true,
+              "note": "Overlapping segments along a minor axis, with ellipses."
+            },
+            {
+              "id": "l3-plants",
+              "name": "Plant drawings",
+              "quota": 8,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/3/1/homework",
+              "warmup": false,
+              "note": "First four with no texture at all. Last four may have texture."
+            }
+          ]
+        },
+        {
+          "id": "l4",
+          "kind": "lesson",
+          "name": "Lesson 4: Applying construction to insects and arachnids",
+          "short": "Lesson 4",
+          "url": "https://drawabox.com/lesson/4",
+          "after": [
+            "l3"
+          ],
+          "summary": "Solid forms combined into complex objects. Every pass must end with forms that feel solid. Draw from reference.",
+          "tools": "Fineliner. Brush pen for dark areas, not for lines.",
+          "exercises": [
+            {
+              "id": "l4-contour",
+              "name": "Organic forms with contour curves (review)",
+              "quota": 2,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/2/contourlines",
+              "warmup": false,
+              "sameAs": "l2-contour",
+              "note": "Same exercise as Lesson 2."
+            },
+            {
+              "id": "l4-construction",
+              "name": "Insects, construction only",
+              "quota": 4,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/4/1/homework",
+              "warmup": false,
+              "note": "No texture or detail."
+            },
+            {
+              "id": "l4-detail",
+              "name": "Insects, detail optional",
+              "quota": 6,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/4/1/homework",
+              "warmup": false,
+              "note": "Texture and detail allowed if you want."
+            }
+          ]
+        },
+        {
+          "id": "l5",
+          "kind": "lesson",
+          "name": "Lesson 5: Applying construction to animals",
+          "short": "Lesson 5",
+          "url": "https://drawabox.com/lesson/5",
+          "after": [
+            "l4"
+          ],
+          "summary": "Cranium, ribcage and pelvis, the torso as a sausage, limbs and additional masses. Draw from reference.",
+          "tools": "Fineliner. Brush pen for dark areas, not for lines.",
+          "exercises": [
+            {
+              "id": "l5-organicint",
+              "name": "Organic intersections (review)",
+              "quota": 2,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/2/organicintersections",
+              "warmup": false,
+              "sameAs": "l2-organicint",
+              "note": "Same exercise as Lesson 2."
+            },
+            {
+              "id": "l5-birds",
+              "name": "Birds",
+              "quota": 2,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/5/1/homework",
+              "warmup": false,
+              "note": "One of the two construction only."
+            },
+            {
+              "id": "l5-nonhooved",
+              "name": "Non-hooved quadrupeds",
+              "quota": 4,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/5/1/homework",
+              "warmup": false,
+              "note": "Two subjects, two full pages each. Wolves, cats, bears, ferrets."
+            },
+            {
+              "id": "l5-hooved",
+              "name": "Hooved quadrupeds",
+              "quota": 4,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/5/1/homework",
+              "warmup": false,
+              "note": "Two subjects, two full pages each. Horses, deer, camels. Rhinos and elephants count."
+            },
+            {
+              "id": "l5-random",
+              "name": "Random animals",
+              "quota": 2,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/5/1/homework",
+              "warmup": false,
+              "note": "Lizards, fish, anything else."
+            },
+            {
+              "id": "l5-hybrids",
+              "name": "Hybrids",
+              "quota": 1,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/5/1/homework",
+              "warmup": false,
+              "note": "Combine pieces of references you studied into new creatures."
+            }
+          ]
+        },
+        {
+          "id": "l6",
+          "kind": "lesson",
+          "name": "Lesson 6: Applying construction to everyday objects",
+          "short": "Lesson 6",
+          "url": "https://drawabox.com/lesson/6",
+          "after": [
+            "l5",
+            "c250cylinders"
+          ],
+          "summary": "Subdivision, mirroring and orthographic plans. Precision matters more than freehanding here. Work from life as much as from photos.",
+          "tools": "Ink. Ballpoint, rulers, ellipse guides and french curves allowed. No pencil or digital media.",
+          "exercises": [
+            {
+              "id": "l6-intersections",
+              "name": "Form intersections (review)",
+              "quota": 3,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/2/formintersections",
+              "warmup": false,
+              "sameAs": "l2-intersections",
+              "note": "Same exercise as Lesson 2."
+            },
+            {
+              "id": "l6-objects",
+              "name": "Everyday objects",
+              "quota": 8,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/6/1/homework",
+              "warmup": false,
+              "note": "Vary them: some cylindrical, some boxy."
+            }
+          ]
+        },
+        {
+          "id": "l7",
+          "kind": "lesson",
+          "name": "Lesson 7: Applying construction to vehicles",
+          "short": "Lesson 7",
+          "url": "https://drawabox.com/lesson/7",
+          "after": [
+            "l6",
+            "c25wheels"
+          ],
+          "summary": "Measuring in space, squares in perspective and orthographic plans applied to vehicles. The 25 wheel challenge is required first.",
+          "tools": "One kind of pen for all lines, ballpoint preferred. Ellipse guide and ruler allowed. No pencil or digital media.",
+          "exercises": [
+            {
+              "id": "l7-intersections",
+              "name": "Form intersections (review)",
+              "quota": 1,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/2/formintersections",
+              "warmup": false,
+              "sameAs": "l2-intersections",
+              "note": "Same exercise as Lesson 2."
+            },
+            {
+              "id": "l7-cylinders",
+              "name": "Cylinders in boxes with error check",
+              "quota": 1,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/250cylinders/1/stage2",
+              "warmup": false,
+              "sameAs": "c250cyl-box",
+              "note": "Ellipse guide allowed."
+            },
+            {
+              "id": "l7-primitives",
+              "name": "Form-intersection vehicles",
+              "quota": 4,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/7/1/homework",
+              "warmup": false,
+              "note": "Primitives only, drawn through. No grids or subdivision."
+            },
+            {
+              "id": "l7-vehicles",
+              "name": "Vehicles",
+              "quota": 8,
+              "unit": "pages",
+              "url": "https://drawabox.com/lesson/7/1/homework",
+              "warmup": false,
+              "note": "Boats, planes and wagons welcome. Include the orthographic plans."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
