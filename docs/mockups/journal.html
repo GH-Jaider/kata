@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kata · Journal</title>
+<script>if (new URLSearchParams(location.search).get('theme') === 'light') document.documentElement.dataset.theme = 'light';</script>
+<link rel="stylesheet" href="kata.css">
+<style>
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 12px; }
+  @media (min-width: 600px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  .grid .cap { display: flex; justify-content: space-between; margin-top: 8px; }
+  .grid .cap .name { font-size: 13px; color: var(--fg-2); }
+  .month { display: grid; grid-template-columns: repeat(7, 14px); gap: 10px; }
+  .month i { width: 14px; height: 14px; border-radius: 50%; border: 1px solid var(--line-2); box-sizing: border-box; }
+  .month i.on { background: var(--fg-2); border-color: transparent; }
+  .month i.today { border-color: var(--accent); }
+  .month i.blank { visibility: hidden; }
+</style>
+</head>
+<body>
+<div class="app">
+  <x-nav on="journal"></x-nav>
+  <div class="content">
+    <main class="page">
+      <div class="topbar"><span class="mono">September · 14 days drawn</span></div>
+      <h1 class="display">Journal</h1>
+
+      <section class="section" style="margin-top:20px">
+        <div class="section-head"><span class="mono">Then and now</span><a class="link small" href="#">Ghosted lines ▾</a></div>
+        <div class="two">
+          <figure><div class="thumb figure ghost"><x-fig name="ghosted"></x-fig></div><figcaption class="mono" style="margin-top:8px">Day 1 · 12 Aug</figcaption></figure>
+          <figure><div class="thumb figure hero"><x-fig name="ghosted"></x-fig></div><figcaption class="mono" style="margin-top:8px">Tue 16 Sep</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><span class="mono">This month</span></div>
+        <div class="month">
+          <i class="on"></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i><i></i>
+          <i class="on"></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i></i><i></i>
+          <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="today"></i><i class="blank"></i><i class="blank"></i>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><span class="mono">Thu 17 Sep</span><span class="small num">31 min study · 25 min play</span></div>
+        <div class="grid">
+          <figure><div class="thumb figure"><x-fig name="boxes"></x-fig></div><div class="cap"><span class="name">Boxes 57 to 62</span><span class="mono">Paper</span></div></figure>
+          <figure><div class="thumb figure"><x-fig name="ellipses"></x-fig></div><div class="cap"><span class="name">Tables of ellipses</span><span class="mono">Warm-up</span></div></figure>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section-head"><span class="mono">Tue 16 Sep</span><span class="small num">28 min study · 40 min play</span></div>
+        <div class="grid">
+          <figure><div class="thumb figure"><x-fig name="ghosted"></x-fig></div><div class="cap"><span class="name">Ghosted lines</span><span class="mono">Warm-up</span></div></figure>
+          <figure><div class="thumb figure"><x-fig name="boxes"></x-fig></div><div class="cap"><span class="name">Boxes 51 to 56</span><span class="mono">Paper</span></div></figure>
+          <figure><div class="thumb figure"><x-fig name="leaf"></x-fig></div><div class="cap"><span class="name">Free drawing</span><span class="mono">Tablet</span></div></figure>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+<script src="mock.js"></script>
+</body>
+</html>

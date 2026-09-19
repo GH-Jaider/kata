@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kata · Today</title>
+<script>const q = new URLSearchParams(location.search); if (q.get('theme') === 'dark') document.documentElement.dataset.theme = 'dark';</script>
+<link rel="stylesheet" href="poster.css">
+<style>
+  .state { display: none; } .state.on { display: contents; }
+  .done-wrap { padding: var(--pad); display: flex; flex-direction: column; gap: 28px; }
+  .done-wrap .pair { max-width: 760px; }
+  .fresh-note { padding: var(--pad); display: grid; gap: 14px; }
+  @media (min-width: 900px) { .fresh-note { grid-template-columns: auto 1fr; align-items: center; gap: 28px; } }
+  .glyphs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .glyphs span { width: 30px; height: 30px; border: 2px solid var(--ink); opacity: .22; display: grid; place-items: center; }
+  .glyphs span svg { width: 20px; height: 20px; }
+  .glyphs span.on { opacity: 1; background: var(--c2); border-color: var(--c2); color: var(--c2-ink); }
+</style>
+</head>
+<body>
+<div class="today-page">
+  <header class="mast">
+    <span class="brand">Kata</span>
+    <nav><a class="on" href="today.html">Today</a><a href="path.html">Path</a><a href="journal.html">Journal</a></nav>
+    <span class="meta">Fri 18 Sep · week 3</span>
+  </header>
+
+  <section class="state" data-state="plan">
+    <div class="blocks">
+      <div class="blk c1"><div class="k">Warm-up</div><div class="n">Ghosted lines. Tables of ellipses.</div><div class="m">10<small>min</small></div></div>
+      <div class="blk c2"><div class="k">Homework · The Next Fifty</div><div class="n">Boxes with line extensions</div><div class="d">62 of 250. No vanishing points on the page, shallow foreshortening.</div><div class="m">20<small>min</small></div></div>
+      <div class="blk c3"><div class="k">Free drawing</div><div class="n">Whatever you like.</div><div class="d">Half of your drawing time is yours. The 50% rule.</div><div class="m">30<small>min</small></div></div>
+    </div>
+    <button class="bar-btn">Start <span class="long">on paper · change · or log practice instead</span><span class="short">on paper</span></button>
+  </section>
+
+  <section class="state" data-state="fresh">
+    <div class="blocks" style="grid-template-rows: 2fr 1fr">
+      <div class="blk c2"><div class="k">First session · reading counts</div><div class="n">Read Lesson 0</div><div class="d">Mindset, the 50% rule, how warm-ups work, which tools. Then draw anything for fifteen minutes.</div><div class="m">15<small>min</small></div></div>
+      <div class="blk c3"><div class="k">Free drawing</div><div class="n">Whatever you like.</div><div class="m">15<small>min</small></div></div>
+    </div>
+    <div class="fresh-note"><div class="glyphs"><span class="on"><x-glyph name="l0"></x-glyph></span><span><x-glyph name="l1"></x-glyph></span><span><x-glyph name="boxes"></x-glyph></span><span><x-glyph name="l2"></x-glyph></span><span><x-glyph name="l3"></x-glyph></span><span><x-glyph name="l4"></x-glyph></span><span><x-glyph name="l5"></x-glyph></span><span><x-glyph name="cyl"></x-glyph></span><span><x-glyph name="l6"></x-glyph></span><span><x-glyph name="wheels"></x-glyph></span><span><x-glyph name="l7"></x-glyph></span></div><p class="small mute">Eleven units. Each one fills in as its pages add up. Warm-ups appear once you have done a few exercises.</p></div>
+    <button class="bar-btn ink">Start <span class="long">on paper · change</span><span class="short">on paper</span></button>
+  </section>
+
+  <section class="state" data-state="done">
+    <div class="done-wrap">
+      <div>
+        <div class="k mute">Done for today</div>
+        <h1 class="h-poster" style="margin-top:8px">28 minutes, 5 boxes.</h1>
+        <p class="lead" style="margin-top:10px">Tomorrow: boxes, 67 of 250, the Next Fifty.</p>
+      </div>
+      <div class="facts stats">
+        <div><div class="v">67<small>/ 250</small></div><div class="l">Boxes</div></div>
+        <div><div class="v">5<small>of 5</small></div><div class="l">Days this week</div></div>
+        <div><div class="v">37</div><div class="l">Days drawn</div></div>
+      </div>
+      <div class="pair">
+        <figure><div class="ph then fig"><x-fig name="boxes"></x-fig></div><figcaption class="cap">Day 1 · 12 Aug</figcaption></figure>
+        <figure><div class="ph fig"><x-fig name="boxes"></x-fig></div><figcaption class="cap"><b>Today</b></figcaption></figure>
+      </div>
+      <div><button class="btn line">Draw more anyway</button></div>
+    </div>
+    <div class="blk c3" style="min-height:0;padding:var(--pad)"><div class="k">This week</div><div class="n">Five of five.</div><div class="d">Two spare days you did not need.</div><div class="m" style="font-size:clamp(64px,12vw,120px)">5<small>/5</small></div></div>
+  </section>
+</div>
+<script src="../mockups/mock.js"></script>
+<script>document.querySelector(`[data-state="${new URLSearchParams(location.search).get('state') || 'plan'}"]`)?.classList.add('on');</script>
+</body>
+</html>

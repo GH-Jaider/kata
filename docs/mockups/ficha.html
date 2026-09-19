@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kata · Ghosted lines</title>
+<script>if (new URLSearchParams(location.search).get('theme') === 'light') document.documentElement.dataset.theme = 'light';</script>
+<link rel="stylesheet" href="kata.css">
+<style>
+  .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .cols { display: grid; gap: 28px; margin-top: 24px; }
+  @media (min-width: 600px) { .cols { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <x-nav on="path"></x-nav>
+  <div class="content">
+    <main class="page">
+      <div class="topbar"><button class="btn quiet sm" style="margin-left:-10px"><x-icon name="back"></x-icon>Lesson 1</button><a class="mono ext" href="#">Full lesson on drawabox.com</a></div>
+      <span class="mono">Fig 1.2 · Lesson 1 · Lines</span>
+      <h1 class="display" style="margin-top:6px">Ghosted lines</h1>
+      <div class="meta"><span class="chip">1 page</span><span class="chip">Warm-up</span><span class="chip">You have drawn 3 pages</span></div>
+
+      <div class="cols">
+        <div>
+          <figure class="figure hero"><x-fig name="ghosted"></x-fig><figcaption class="mono">Plan · ghost · draw once</figcaption></figure>
+          <p class="body" style="margin-top:18px">The exercise that teaches the one habit everything else depends on: decide the line first, then draw it once, from the shoulder, without slowing down to aim.</p>
+        </div>
+        <div>
+          <ol class="steps">
+            <li><span><b>Mark two dots.</b> Decide where the line starts and ends before the pen touches the page.</span></li>
+            <li><span><b>Ghost it.</b> Move the pen along the path three or four times, hovering just above the paper.</span></li>
+            <li><span><b>Draw once.</b> One confident stroke at the same speed as the ghosting. Do not slow down near the end.</span></li>
+            <li><span><b>Leave it.</b> A wobble or a miss is information. Never go back over a line.</span></li>
+          </ol>
+          <div class="note" style="margin-top:16px"><b>Watch for.</b> Wobbly lines mean you drew too slowly. Curved lines mean the wrist took over. Overshooting the dot is fine for now.</div>
+          <div class="btns" style="margin-top:16px"><button class="btn">Log a page</button><button class="btn primary">5-minute warm-up</button></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="mock.js"></script>
+</body>
+</html>

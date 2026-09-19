@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kata · Done</title>
+<script>if (new URLSearchParams(location.search).get('theme') === 'light') document.documentElement.dataset.theme = 'light';</script>
+<link rel="stylesheet" href="kata.css">
+<style>
+  .end { min-height: 100vh; display: flex; flex-direction: column; padding: 20px 20px 24px; max-width: 720px; margin: 0 auto; width: 100%; }
+  .end .body-wrap { flex: 1; }
+  .facts { display: flex; gap: 28px; margin-top: 22px; flex-wrap: wrap; }
+  .pair { margin-top: 28px; }
+  .reflect { margin-top: 28px; }
+</style>
+</head>
+<body>
+<div class="end">
+  <div class="body-wrap">
+    <span class="mono">Done for today · Fri 18 Sep</span>
+    <h1 class="display lg" style="margin-top:8px">28 minutes, 5 boxes.</h1>
+    <div class="facts">
+      <div><div class="kv"><div><div class="v num">67 <span class="dim" style="font-size:14px;font-weight:500">/ 250</span></div><div class="k">Boxes</div></div></div></div>
+      <div><div class="kv"><div><div class="v num">5 <span class="dim" style="font-size:14px;font-weight:500">of 5</span></div><div class="k">Days this week</div></div></div></div>
+      <div><div class="kv"><div><div class="v num">37</div><div class="k">Days drawn</div></div></div></div>
+    </div>
+
+    <div class="pair">
+      <div class="two">
+        <figure><div class="thumb figure ghost"><x-fig name="boxes"></x-fig></div><figcaption class="mono" style="margin-top:8px">Day 1 · 12 Aug</figcaption></figure>
+        <figure><div class="thumb figure hero"><x-fig name="boxes"></x-fig></div><figcaption class="mono" style="margin-top:8px">Today</figcaption></figure>
+      </div>
+      <p class="small" style="margin-top:12px"><span class="mono" style="margin-right:8px">Last time</span>Near corners flare. Slow down on the last edge of each Y.</p>
+    </div>
+
+    <div class="reflect">
+      <span class="mono">One thing to fix next time</span>
+      <input class="field" style="margin-top:8px" placeholder="Optional">
+    </div>
+  </div>
+  <div class="cta" style="padding-top:24px"><button class="btn primary lg block">Done</button></div>
+</div>
+<script src="mock.js"></script>
+</body>
+</html>

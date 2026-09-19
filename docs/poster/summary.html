@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kata · Done</title>
+<script>if (new URLSearchParams(location.search).get('theme') === 'dark') document.documentElement.dataset.theme = 'dark';</script>
+<link rel="stylesheet" href="poster.css">
+<style>
+  .end .body { flex: 1; max-width: 900px; }
+  .last { margin-top: 14px; font-size: 15px; color: var(--mute); }
+  .last b { color: var(--ink); }
+  .end .foot { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; }
+</style>
+</head>
+<body>
+<div class="end">
+  <div class="body">
+    <div class="k mute">Done for today · Fri 18 Sep</div>
+    <h1 class="h-poster" style="margin-top:8px">28 minutes, 5 boxes.</h1>
+    <div class="facts">
+      <div><div class="v num">67<small>/ 250</small></div><div class="l">Boxes</div></div>
+      <div><div class="v num">5<small>of 5</small></div><div class="l">Days this week</div></div>
+      <div><div class="v num">37</div><div class="l">Days drawn</div></div>
+    </div>
+    <div class="pair">
+      <figure><div class="ph then fig"><x-fig name="boxes"></x-fig></div><figcaption class="cap">Day 1 · 12 Aug</figcaption></figure>
+      <figure><div class="ph fig"><x-fig name="boxes"></x-fig></div><figcaption class="cap"><b>Today</b></figcaption></figure>
+    </div>
+    <p class="last"><b>Last time you wrote:</b> near corners flare, slow down on the last edge of each Y.</p>
+    <div class="reflect"><div class="k mute">One thing to fix next time</div><input placeholder="Optional"></div>
+  </div>
+  <div class="foot"><span class="small mute">That is the session. Nothing else to do.</span><button class="btn">Done</button></div>
+</div>
+<script src="../mockups/mock.js"></script>
+</body>
+</html>

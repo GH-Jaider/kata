@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><title>Kata · Poster · responsivo</title>
+<style>
+  body { margin: 0; padding: 40px; background: #141414; color: #ddd; font-family: system-ui, sans-serif; }
+  h1 { font-weight: 500; font-size: 22px; margin: 0 0 6px; }
+  p { color: #999; max-width: 80ch; margin: 0; }
+  .set { margin-top: 36px; }
+  .set h2 { font-size: 12px; font-weight: 500; color: #aaa; letter-spacing: .06em; text-transform: uppercase; margin: 0 0 12px; }
+  .frames { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start; }
+  .box { overflow: hidden; border-radius: 10px; border: 1px solid #333; background: #000; }
+  .box iframe { border: 0; transform-origin: top left; display: block; }
+  .lab { font-size: 11px; color: #777; margin-top: 6px; font-family: ui-monospace, monospace; }
+</style>
+</head>
+<body>
+<h1>Poster, en todos los anchos</h1>
+<p>375 es el iPad a un tercio junto a Procreate y un teléfono. 683 es la mitad de un iPad de 13". 1376 × 1032 es el iPad entero horizontal. 1280 es una ventana de Mac. Los grandes van escalados al 45%. Añade <code>?theme=dark</code> a las páginas de papel para verlas en tinta.</p>
+<script>
+  const S = { 375: 1, 683: .6, 1032: .45, 1280: .45, 1376: .45 };
+  const sets = [
+    ['Today', [['today.html', 375, 812], ['today.html', 683, 1024], ['today.html', 1376, 1032], ['today.html', 1280, 820]]],
+    ['Today · primera vez y hecho por hoy', [['today.html?state=fresh', 375, 812], ['today.html?state=done', 375, 812], ['today.html?state=done', 1376, 1032]]],
+    ['Session · deber, calentamiento, dibujo libre', [['session.html', 375, 812], ['session.html', 683, 1024], ['session.html?b=warmup', 683, 1024], ['session.html?b=play', 683, 1024], ['session.html', 1376, 1032], ['session.html', 1032, 1376]]],
+    ['Cierre de sesión', [['summary.html', 375, 812], ['summary.html', 683, 1024], ['summary.html', 1376, 1032], ['summary.html?theme=dark', 375, 812]]],
+    ['Path', [['path.html', 375, 1100], ['path.html', 683, 1024], ['path.html', 1376, 1032], ['path.html?theme=dark', 1376, 1032]]],
+    ['Journal', [['journal.html', 375, 1100], ['journal.html', 683, 1024], ['journal.html', 1376, 1032]]],
+    ['Ficha', [['ficha.html', 375, 1100], ['ficha.html', 683, 1024], ['ficha.html', 1280, 900]]],
+  ];
+  for (const [title, frames] of sets) {
+    const s = document.createElement('section'); s.className = 'set';
+    s.innerHTML = `<h2>${title}</h2><div class="frames">${frames.map(([src, w, h]) => { const k = S[w] || .45; return `<div><div class="box" style="width:${w * k}px;height:${h * k}px"><iframe src="${src}" width="${w}" height="${h}" style="transform:scale(${k})" loading="lazy"></iframe></div><div class="lab">${src} · ${w} × ${h}</div></div>`; }).join('')}</div>`;
+    document.body.append(s);
+  }
+</script>
+</body>
+</html>

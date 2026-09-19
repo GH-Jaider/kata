@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kata · Today</title>
+<script>if (new URLSearchParams(location.search).get('theme') === 'light') document.documentElement.dataset.theme = 'light';</script>
+<link rel="stylesheet" href="kata.css">
+<style>
+  .hero { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
+  .state { display: none; }
+  .state.on { display: block; }
+  .done-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  @media (min-width: 600px) { .done-strip { grid-template-columns: 1fr 1fr 1fr; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <x-nav on="today"></x-nav>
+  <div class="content">
+    <main class="page">
+      <div class="topbar"><span class="mono">Fri 18 Sep · Week 3</span><button class="icon-btn" aria-label="Settings"><x-icon name="gear"></x-icon></button></div>
+
+      <!-- STATE: plan -->
+      <section class="state" data-state="plan">
+        <div class="hero">
+          <div>
+            <h1 class="display">Today</h1>
+            <p class="body" style="margin-top:4px">About 30 minutes, then draw for yourself.</p>
+          </div>
+          <button class="chip"><x-icon name="paper"></x-icon>Paper</button>
+        </div>
+
+        <div class="plan">
+          <div class="item">
+            <div class="dot"><i></i></div>
+            <div><div class="name">Warm-up</div><div class="sub">Ghosted lines · Tables of ellipses</div></div>
+            <div class="min num">10 min</div>
+          </div>
+          <div class="item on">
+            <div class="dot"><i></i></div>
+            <div><div class="name">Boxes with line extensions</div><div class="sub">The Next Fifty · 62 / 250 · no vanishing points on the page</div></div>
+            <div class="min num">20 min</div>
+          </div>
+          <div class="item">
+            <div class="dot"><i></i></div>
+            <div><div class="name">Free drawing</div><div class="sub">Whatever you like. The 50% rule.</div></div>
+            <div class="min num">30 min</div>
+          </div>
+        </div>
+
+        <div class="cta" style="margin-top:20px">
+          <button class="btn primary lg block">Start</button>
+          <div class="btns" style="margin-top:8px"><button class="btn quiet sm">Shuffle warm-ups</button><button class="btn quiet sm">Log practice</button></div>
+        </div>
+
+        <section class="section">
+          <div class="section-head"><span class="mono">This week</span><span class="small num">4 of 5 · 2 reserve days</span></div>
+          <div class="week">
+            <div class="d done">M</div><div class="d done">T</div><div class="d done">W</div><div class="d done">T</div><div class="d today">F</div><div class="d reserve">S</div><div class="d reserve">S</div>
+          </div>
+        </section>
+      </section>
+
+      <!-- STATE: fresh (first run) -->
+      <section class="state" data-state="fresh">
+        <div class="hero">
+          <div>
+            <h1 class="display">First session</h1>
+            <p class="body" style="margin-top:4px">About 15 minutes. Reading counts.</p>
+          </div>
+          <button class="chip"><x-icon name="paper"></x-icon>Paper</button>
+        </div>
+        <div class="plan">
+          <div class="item on">
+            <div class="dot"><i></i></div>
+            <div><div class="name">Read Lesson 0</div><div class="sub">Mindset, the 50% rule, warm-ups, tools</div></div>
+            <div class="min num">15 min</div>
+          </div>
+          <div class="item">
+            <div class="dot"><i></i></div>
+            <div><div class="name">Free drawing</div><div class="sub">Whatever you like. No rules yet.</div></div>
+            <div class="min num">15 min</div>
+          </div>
+        </div>
+        <div class="cta" style="margin-top:20px"><button class="btn primary lg block">Start</button></div>
+        <section class="section">
+          <div class="section-head"><span class="mono">The path</span><span class="small">11 units</span></div>
+          <div class="glyphs">
+            <span class="g on"><x-glyph name="l0"></x-glyph></span><span class="g"><x-glyph name="l1"></x-glyph></span><span class="g"><x-glyph name="boxes"></x-glyph></span><span class="g"><x-glyph name="l2"></x-glyph></span><span class="g"><x-glyph name="l3"></x-glyph></span><span class="g"><x-glyph name="l4"></x-glyph></span><span class="g"><x-glyph name="l5"></x-glyph></span><span class="g"><x-glyph name="cyl"></x-glyph></span><span class="g"><x-glyph name="l6"></x-glyph></span><span class="g"><x-glyph name="wheels"></x-glyph></span><span class="g"><x-glyph name="l7"></x-glyph></span>
+          </div>
+          <p class="small" style="margin-top:12px">Warm-ups appear once you have done a few exercises. Every unit lights up as its pages add up.</p>
+        </section>
+      </section>
+
+      <!-- STATE: done (came back later the same day) -->
+      <section class="state" data-state="done">
+        <div class="hero">
+          <div>
+            <h1 class="display">Done for today</h1>
+            <p class="body" style="margin-top:4px">Tomorrow: boxes, 67 / 250.</p>
+          </div>
+        </div>
+        <div class="done-strip">
+          <div><div class="kv"><div><div class="v num">28<span class="dim" style="font-size:14px;font-weight:500"> min</span></div><div class="k">Study</div></div></div></div>
+          <div><div class="kv"><div><div class="v num">5</div><div class="k">Boxes, 67 of 250</div></div></div></div>
+          <div><div class="kv"><div><div class="v num">31<span class="dim" style="font-size:14px;font-weight:500"> min</span></div><div class="k">Free drawing</div></div></div></div>
+        </div>
+        <div class="two" style="margin-top:20px">
+          <figure><div class="thumb figure ghost"><x-fig name="boxes"></x-fig></div><figcaption class="mono" style="margin-top:8px">Day 1 · 12 Aug</figcaption></figure>
+          <figure><div class="thumb figure hero"><x-fig name="boxes"></x-fig></div><figcaption class="mono" style="margin-top:8px">Today</figcaption></figure>
+        </div>
+        <section class="section">
+          <div class="section-head"><span class="mono">This week</span><span class="small num">5 of 5 · done</span></div>
+          <div class="week">
+            <div class="d done">M</div><div class="d done">T</div><div class="d done">W</div><div class="d done">T</div><div class="d today done">F</div><div class="d reserve">S</div><div class="d reserve">S</div>
+          </div>
+        </section>
+        <div class="cta" style="margin-top:24px"><button class="btn quiet block">Draw more anyway</button></div>
+      </section>
+    </main>
+  </div>
+</div>
+<script src="mock.js"></script>
+<script>
+  const st = new URLSearchParams(location.search).get('state') || 'plan';
+  document.querySelector(`[data-state="${st}"]`)?.classList.add('on');
+</script>
+</body>
+</html>

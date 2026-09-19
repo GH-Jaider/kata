@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kata · Diseño v0.2</title>
+<link rel="stylesheet" href="mockups/kata.css">
+<style>
+  body { padding: 48px 24px 96px; }
+  .doc { max-width: 760px; margin: 0 auto; }
+  .doc h1 { margin-top: 8px; }
+  .doc h2 { font-size: 22px; font-weight: 600; letter-spacing: -.015em; margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .doc h3 { font-size: 16px; font-weight: 600; margin-top: 28px; }
+  .doc p { margin-top: 12px; color: var(--fg-2); }
+  .doc p b, .doc li b { color: var(--fg); font-weight: 500; }
+  .doc ul, .doc ol { margin: 12px 0 0; padding-left: 20px; color: var(--fg-2); }
+  .doc li { margin-top: 8px; }
+  .doc li a, .doc p a { color: var(--fg-3); border-bottom: 1px solid var(--line-2); }
+  .doc li a:hover, .doc p a:hover { color: var(--accent); border-color: var(--accent); }
+  .doc table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 14px; }
+  .doc th { text-align: left; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--fg-3); font-weight: 500; padding: 8px 12px 8px 0; border-bottom: 1px solid var(--line-2); }
+  .doc td { padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); color: var(--fg-2); vertical-align: top; }
+  .doc td:first-child { color: var(--fg); }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; margin-top: 16px; }
+  .sw { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 8px 10px; font-family: var(--mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--fg-3); }
+  .frames { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 16px; }
+  .frames iframe { border: 1px solid var(--line-2); border-radius: 14px; background: var(--bg); }
+  .scaled { --s: calc(760 / 1376); width: calc(var(--w) * var(--s)); height: calc(var(--h) * var(--s)); overflow: hidden; margin-top: 16px; border: 1px solid var(--line-2); border-radius: 14px; }
+  .scaled iframe { width: var(--w); height: var(--h); border: 0; transform: scale(var(--s)); transform-origin: top left; background: var(--bg); }
+  .hero-fig { max-width: 420px; margin: 32px auto 0; }
+  .callout { border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin-top: 16px; }
+  .callout p { margin-top: 6px; }
+  code { font-family: var(--mono); font-size: .9em; color: var(--fg); }
+  .toc { margin-top: 24px; display: grid; gap: 6px; }
+  .toc a { color: var(--fg-2); font-size: 14px; }
+  .toc a:hover { color: var(--fg); }
+</style>
+</head>
+<body>
+<article class="doc">
+  <span class="mono">Kata · diseño v0.2 · 18 sep 2026</span>
+  <h1 class="display lg">Una sesión al día que dé gusto abrir</h1>
+  <div class="callout"><b>Actualización, 18 sep.</b><p>La dirección visual de este documento (secciones 5 y 6) fue descartada por parecer genérica. La dirección elegida es <b>Poster</b>, color plano a sangre por bloque y tipografía gigante: ver <a href="poster/index.html">poster/index.html</a> en todos los anchos y <a href="explorations/index.html">explorations/</a> con las tres alternativas que se compararon. Los principios (sección 2), la estructura (3) y el flujo de la sesión (4) siguen vigentes.</p></div>
+  <p>Este documento recoge lo que estudié de UI/UX para Kata, las decisiones que salen de ahí y los mockups que las muestran. La v0.1 funcionaba pero no tenía nada pensado; esto es lo pensado. Los mockups están en <a href="mockups/index.html">mockups/</a>, con contenido real y en los anchos que importan.</p>
+  <figure class="figure hero hero-fig"><x-fig name="boxes"></x-fig><figcaption class="mono">Fig 2.1 · Cajas con extensiones · el lenguaje de ilustración de Kata es el propio temario</figcaption></figure>
+
+  <nav class="toc">
+    <a href="#aprendido">1. Lo que aprendí</a><a href="#principios">2. Principios de Kata</a><a href="#estructura">3. Estructura</a><a href="#sesion">4. La sesión, paso a paso</a><a href="#visual">5. Sistema visual</a><a href="#mockups">6. Mockups</a><a href="#decisiones">7. Lo que te toca decidir</a><a href="#fuentes">8. Fuentes</a>
+  </nav>
+
+  <h2 id="aprendido">1. Lo que aprendí</h2>
+  <p>Tres investigaciones con fuentes leídas de verdad: leyes y heurísticas de UX, guías de plataforma de Apple para iPad, y análisis de Morse, Linear, Duolingo, Headspace, Apple Fitness, Session y las herramientas de dibujo que ya existen. Lo que cambia decisiones:</p>
+
+  <h3>Sobre la sesión</h3>
+  <ul>
+    <li><b>Una cosa por pantalla y una sola acción principal.</b> El tiempo de decisión crece con las opciones (Hick). Morse enseña una palabra, con un acento de color y el mapa del curso reducido a una fila de letras. <a href="https://lawsofux.com/hicks-law/">Laws of UX</a>, <a href="https://github.com/googlecreativelab/morse-learn">código de Morse</a>.</li>
+    <li><b>La complejidad la carga la app, no tú.</b> Secuencia, cuotas y la regla del 50% son responsabilidad de Kata; el usuario nunca configura una sesión (Tesler). <a href="https://lawsofux.com/teslers-law/">Laws of UX</a>.</li>
+    <li><b>Respuesta en menos de 100 ms, movimiento de 120 a 160 ms con ease-out, o ninguno.</b> Para datos que cambian, sin animación es mejor. <a href="https://www.nngroup.com/articles/response-times-3-important-limits/">NNG</a>, <a href="https://emilkowal.ski/ui/good-vs-great-animations">Kowalski (Linear)</a>.</li>
+    <li><b>El temporizador no para al llegar a cero: desborda.</b> Y "unos 30 minutos" en vez de 32:40. <a href="https://www.stayinsession.com/learn/getting-started-with-session-pomodoro-app">Session</a>, <a href="https://www.nngroup.com/articles/progress-indicators/">NNG</a>.</li>
+    <li><b>La barra de progreso avanza aunque la página salga mal.</b> Duolingo la hace avanzar menos en un fallo, nunca retroceder. <a href="https://blakecrosley.com/guides/design/duolingo">Teardown Duolingo</a>.</li>
+    <li><b>Las instrucciones siguen un calendario de pistas.</b> Morse muestra el dibujo mnemotécnico las dos primeras veces y luego solo la letra; vuelve al tercer fallo. <a href="https://raw.githubusercontent.com/googlecreativelab/morse-learn/master/scripts/game-space.js">game-space.js</a>.</li>
+  </ul>
+
+  <h3>Sobre hábitos y rachas</h3>
+  <ul>
+    <li><b>Enseñar una racha rota reduce el uso posterior.</b> Siete estudios (Journal of Consumer Research, 2023): peor cuando el usuario se culpa, mejor si hay reparación posible. <a href="https://academic.oup.com/jcr/article-abstract/49/6/1095/6623414">Silverman &amp; Barasch</a>.</li>
+    <li><b>Una meta semanal con dos días de reserva rinde más que la racha diaria.</b> Hasta un 40% más de cumplimiento; tras un fallo vuelven el 55% frente al 37%. <a href="https://anderson-review.ucla.edu/emergency-reserves/">Sharif &amp; Shu, UCLA</a>.</li>
+    <li><b>Nunca fallar dos veces.</b> Un fallo es un accidente, dos son un patrón. Tras un día perdido, proponer una sesión más corta, sin culpa. <a href="https://jamesclear.com/second-mistake">James Clear</a>.</li>
+    <li><b>Peak-end.</b> Se juzga una experiencia por su pico y su final. El final de la sesión debe ser el mejor momento, y luego nada: sin cadenas de recompensas ni upsell. <a href="https://www.nngroup.com/articles/peak-end-rule/">NNG</a>, <a href="https://tearthemdown.substack.com/p/duolingo-gamified-retention">crítica a Duolingo</a>.</li>
+    <li><b>Gradiente de meta.</b> El esfuerzo sube cerca del objetivo; una tarjeta de 12 sellos con 2 regalados se completa antes que una vacía de 10. Progreso dotado desde el día uno y "faltan 38" al pasar la mitad. <a href="https://home.uchicago.edu/ourminsky/Goal-Gradient_Illusionary_Goal_Progress.pdf">Kivetz et al.</a></li>
+    <li><b>Completar es acumular, no celebrar.</b> En Forest el árbol se une al bosque; en Apple Watch el resumen es una lista de números y "Listo". Sin confeti ni mascotas. <a href="https://forestapp.cc/">Forest</a>, <a href="https://support.apple.com/en-asia/guide/watch/apd91635a9e6/7.0/watchos/7.0">Apple</a>.</li>
+  </ul>
+
+  <h3>Sobre la plataforma</h3>
+  <ul>
+    <li><b>El ancho es arbitrario.</b> Desde iPadOS 26 las ventanas se redimensionan libremente y la app no se entera; diseñar para 320, 600, 683, 834 y 1032+ puntos. <a href="https://developer.apple.com/design/human-interface-guidelines/multitasking">HIG Multitasking</a>, <a href="https://hacknicity.medium.com/how-ipad-apps-adapt-to-the-new-11-and-12-9-ipads-pro-cabd1c0e5f20">medidas</a>.</li>
+    <li><b>Área de toque mínima de 44 puntos, uno o dos botones prominentes por vista, el preferido se distingue por estilo, no por tamaño.</b> <a href="https://developer.apple.com/design/human-interface-guidelines/buttons">HIG Buttons</a>.</li>
+    <li><b>Modo oscuro: no negro puro, elevación como superficie más clara, contraste 4.5:1 mínimo y 7:1 en texto pequeño.</b> <a href="https://developer.apple.com/design/human-interface-guidelines/dark-mode">HIG Dark Mode</a>, <a href="https://codelabs.developers.google.com/codelabs/design-material-darktheme">Material</a>.</li>
+    <li><b>Dígitos tabulares para el reloj y los contadores.</b> Y evitar pesos Light y Thin. <a href="https://developer.apple.com/design/human-interface-guidelines/typography">HIG Typography</a>.</li>
+    <li><b>La estructura se siente, no se ve.</b> Linear quitó separadores, bajó el contraste de los bordes y atenuó la barra lateral "una vez que llegaste". El gris cálido y poco saturado de su último rediseño. <a href="https://linear.app/now/behind-the-latest-design-refresh">Linear</a>.</li>
+  </ul>
+
+  <h2 id="principios">2. Principios de Kata</h2>
+  <ol>
+    <li><b>Abrir y empezar.</b> La pantalla de hoy tiene una sola acción: Start. El plan ya está hecho.</li>
+    <li><b>Un acento por pantalla.</b> Un único elemento de color: la acción principal o el bloque actual. Todo lo demás en grises.</li>
+    <li><b>La estructura se siente.</b> Líneas de un píxel, espacio y jerarquía tipográfica. Sin tarjetas dentro de tarjetas, sin sombras en oscuro, sin degradados.</li>
+    <li><b>Los números nunca castigan.</b> Meta semanal de 5 de 7 con 2 días de reserva; el total de días dibujados solo crece; una racha rota no se muestra jamás.</li>
+    <li><b>El final es el mejor momento.</b> La sesión termina en la foto de hoy junto a la del primer día, tres datos y Listo. Después, nada.</li>
+    <li><b>Reconocer, no recordar.</b> Cada ejercicio tiene su dibujo de línea fina. Se ve antes de leer.</li>
+    <li><b>Las instrucciones se retiran solas.</b> Ficha completa las dos primeras veces; después, el título y "Ver pasos".</li>
+    <li><b>Respuesta inmediata, movimiento breve.</b> Menos de 100 ms al tocar; 120 a 160 ms con ease-out; los números cambian sin animar.</li>
+    <li><b>Funciona a un tercio de pantalla.</b> Una columna, objetivos de 44 puntos, acciones abajo, a mano mientras la otra sostiene el lápiz.</li>
+    <li><b>Las palabras del curso.</b> Ghosted lines, la regla del 50%, Lesson 1. Nunca "tarea", "XP" ni "nivel".</li>
+  </ol>
+
+  <h2 id="estructura">3. Estructura</h2>
+  <p>De cinco pestañas a tres destinos más un modo. Progreso y Registro se fundían en usos distintos de lo mismo: el largo plazo vive en el camino, la evidencia visual en el diario.</p>
+  <table>
+    <tr><th>Destino</th><th>Pregunta que responde</th><th>Qué hay</th></tr>
+    <tr><td>Today</td><td>¿Qué hago hoy?</td><td>El plan en tres bloques, Start, medio (papel o tablet), la semana. Al terminar, el estado "hecho por hoy".</td></tr>
+    <tr><td>Path</td><td>¿Dónde voy?</td><td>El curso como una fila de glifos que se encienden, cuotas por unidad, fichas propias por ejercicio, días dibujados y horas.</td></tr>
+    <tr><td>Journal</td><td>¿Estoy mejorando?</td><td>Fotos por día, "entonces y ahora" por ejercicio, el mes en puntos, notas.</td></tr>
+    <tr><td>Session (modo)</td><td>Ahora, esto.</td><td>Pantalla completa sin navegación: bloque, ficha, reloj, contador, foto, siguiente.</td></tr>
+  </table>
+  <table>
+    <tr><th>v0.1</th><th>v0.2</th><th>Por qué</th></tr>
+    <tr><td>Racha diaria</td><td>Meta semanal 5 de 7 con reserva, más días totales</td><td>Silverman 2023, Sharif &amp; Shu</td></tr>
+    <tr><td>Cinco pestañas iOS</td><td>Tres destinos y un modo</td><td>Hick, Linear "menos cromo"</td></tr>
+    <tr><td>Tarjetas con sombra</td><td>Hairlines y superficies un tono más claras</td><td>Refactoring UI, HIG Dark Mode</td></tr>
+    <tr><td>Nombre y cuota</td><td>Nombre, cuota y figura propia</td><td>Reconocimiento sobre recuerdo (Nielsen)</td></tr>
+    <tr><td>Enlace a Drawabox por ejercicio</td><td>Ficha propia con pasos y "a qué estar atento", más el enlace</td><td>Estética de Drawabox rechazada; el método no tiene copyright, la redacción sí</td></tr>
+    <tr><td>Fin de sesión: toast "guardado"</td><td>Pantalla de cierre: foto de hoy junto a la del día 1, tres datos, una nota, Listo</td><td>Peak-end</td></tr>
+    <tr><td>Sumar páginas en Currículo</td><td>Sigue, y además cuenta para la semana</td><td>Sin castigo a quien dibuja en papel</td></tr>
+    <tr><td>Aviso sonoro al llegar a cero</td><td>Sonido corto opcional y el reloj desborda en color</td><td>HIG Feedback, Session</td></tr>
+  </table>
+
+  <h2 id="sesion">4. La sesión, paso a paso</h2>
+  <h3>Antes</h3>
+  <p>Today muestra la fecha y la semana en mono, el título, "unos 30 minutos" y el chip de medio. El plan es una lista con raíl: calentamiento (dos ejercicios que ya has hecho, elegidos por antigüedad), el siguiente deber del camino con su cuota y su etapa, y dibujo libre. Un solo botón. Debajo, la semana en siete puntos. Nada más.</p>
+  <h3>Durante</h3>
+  <p>Arriba, segmentos por bloque (los calentamientos son cortos, el dibujo libre largo) y "3 / 4". Etiqueta mono del tipo de bloque en acento, título del ejercicio, una línea de contexto. La figura del ejercicio, con "Fig 2.1 · visto 6 veces" y "Ver pasos" si ya se retiró la ficha. El reloj grande, tabular; una línea de progreso de dos píxeles. El contador de páginas o cajas con botones de 56 puntos. Abajo, Foto y Siguiente; Pausa y Terminar como texto. A media pantalla, ficha a la izquierda y reloj a la derecha.</p>
+  <h3>Entre bloques</h3>
+  <p>Sin pantallas intermedias. Al pulsar Siguiente el bloque nuevo entra en 160 ms. Si el reloj llega a cero antes, cambia a "+0:32" en acento y suena una nota corta si está activado; no bloquea nada.</p>
+  <h3>Final</h3>
+  <p>"Hecho por hoy". Una frase con lo hecho: "28 minutos, 5 cajas". Tres datos: la cuota, la semana, los días totales. La foto de hoy junto a la del primer día de ese ejercicio, con lo que escribiste la última vez. Un campo opcional: "una cosa que arreglar la próxima". Listo. Y ya: sin más pantallas, sin invitación a seguir.</p>
+  <h3>Casos</h3>
+  <ul>
+    <li><b>Primera vez.</b> No hay tutorial. La primera sesión es leer la Lección 0 y dibujar libre 15 minutos. Leer cuenta. El primer glifo del camino ya está encendido.</li>
+    <li><b>Sesión interrumpida.</b> Today muestra "Cajas 12 / 20, continuar". El reloj siguió contando porque estabas en Procreate; se puede corregir al cerrar.</li>
+    <li><b>Día perdido.</b> Nada rojo. La semana enseña 3 de 5 con reserva disponible, y el plan de hoy es más corto: "Hoy, 15 minutos para volver".</li>
+    <li><b>Solo papel, sin app durante el dibujo.</b> El + del camino registra una página para hoy y cuenta para la semana. "Registrar práctica" permite minutos, medio, foto y nota.</li>
+    <li><b>Curso terminado.</b> Today ofrece sesiones de calentamiento y dibujo libre, y el camino queda encendido entero.</li>
+  </ul>
+
+  <h2 id="visual">5. Sistema visual</h2>
+  <p>Oscuro primero, claro con los mismos tokens. Gris cálido casi negro, superficies un paso más claras para elevar, líneas al 8% y 16%, texto al 92, 60, 40 y 22%. Un acento, un verde para "hecho". Sin degradados, sin sombras en oscuro.</p>
+  <div class="swatches">
+    <div class="sw"><i style="background:#0B0C0E"></i><span>bg · 0B0C0E</span></div>
+    <div class="sw"><i style="background:#121316"></i><span>bg-1 · 121316</span></div>
+    <div class="sw"><i style="background:#191A1E"></i><span>bg-2 · 191A1E</span></div>
+    <div class="sw"><i style="background:#222327"></i><span>bg-3 · 222327</span></div>
+    <div class="sw"><i style="background:#E2643F"></i><span>accent · E2643F</span></div>
+    <div class="sw"><i style="background:#7FC79A"></i><span>ok · 7FC79A</span></div>
+    <div class="sw"><i style="background:#F6F6F3"></i><span>light bg · F6F6F3</span></div>
+    <div class="sw"><i style="background:#C94A2B"></i><span>light accent · C94A2B</span></div>
+  </div>
+  <table>
+    <tr><th>Elemento</th><th>Decisión</th></tr>
+    <tr><td>Tipografía</td><td>Inter para texto (400, 500, 600), como Linear; en Apple el sistema (SF) como respaldo. JetBrains Mono, o SF Mono, para etiquetas "FIG 1.2", fechas y contadores. Reloj con dígitos tabulares y tracking negativo. Nada de pesos Light.</td></tr>
+    <tr><td>Escala</td><td>11 mono, 13, 15 cuerpo, 20 título, 28 y 34 display; reloj de 64 a 128 según ancho. Interlínea 1.45 en cuerpo, 1.15 en display.</td></tr>
+    <tr><td>Espacio</td><td>Base 4; ritmos de 8, 12, 16, 20, 28, 32, 56. Más espacio entre grupos que dentro de ellos. Márgenes de 20 en compacto, 48 en Mac, contenido a 640 como máximo.</td></tr>
+    <tr><td>Radios</td><td>8 en controles pequeños, 10 en botones, 12 en botones grandes, 14 en paneles. Nada redondo del todo salvo chips y puntos.</td></tr>
+    <tr><td>Ilustración</td><td>Trazos de 1.25 px en currentColor, sin relleno; isométrico para objetos, plano para líneas y elipses; extensiones y construcción en línea discontinua al 35–45%. Cada ejercicio tiene su figura; las mismas figuras, reducidas, son los glifos del camino. Etiqueta mono "Fig n.n".</td></tr>
+    <tr><td>Movimiento</td><td>120 ms para estados, 160 ms para cambiar de pantalla, curva ease-out (.25, .46, .45, .94). Los números no se animan. Con "reducir movimiento", fundidos.</td></tr>
+    <tr><td>Anchos</td><td>375 (iPad a un tercio, teléfono), 600 a 683 (iPad a la mitad: dos columnas en sesión y ficha), 834 y 1032 (iPad entera), 900+ (barra lateral, Mac). Navegación inferior en compacto, lateral en regular.</td></tr>
+    <tr><td>Accesibilidad</td><td>Texto normal a 4.5:1 o más; el acento sobre fondo oscuro se usa solo en botones y etiquetas de 11 px en mayúsculas, con tracking, para compensar. Ningún estado depende solo del color: el bloque actual tiene punto, etiqueta y posición.</td></tr>
+  </table>
+
+  <h2 id="mockups">6. Mockups</h2>
+  <p>Tres tamaños que importan: el iPad a un tercio junto a Procreate (375 puntos, también un teléfono), el iPad de 13 pulgadas entero (1376 por 1032) y el Mac. La galería completa, con 683, el iPad vertical y las versiones claras, está en <a href="mockups/index.html">mockups/index.html</a>.</p>
+  <h3>iPad a un tercio, junto a Procreate</h3>
+  <div class="frames">
+    <iframe src="mockups/today.html?state=plan" width="375" height="812" loading="lazy" title="Today"></iframe>
+    <iframe src="mockups/session.html" width="375" height="812" loading="lazy" title="Session"></iframe>
+    <iframe src="mockups/summary.html" width="375" height="812" loading="lazy" title="End of session"></iframe>
+    <iframe src="mockups/path.html" width="375" height="812" loading="lazy" title="Path"></iframe>
+  </div>
+  <h3>iPad entero, 13 pulgadas</h3>
+  <div class="scaled" style="--w:1376px;--h:1032px"><iframe src="mockups/today.html?state=plan" width="1376" height="1032" loading="lazy" title="Today on iPad"></iframe></div>
+  <div class="scaled" style="--w:1376px;--h:1032px"><iframe src="mockups/session.html" width="1376" height="1032" loading="lazy" title="Session on iPad"></iframe></div>
+  <div class="scaled" style="--w:1376px;--h:1032px"><iframe src="mockups/path.html" width="1376" height="1032" loading="lazy" title="Path on iPad"></iframe></div>
+  <div class="scaled" style="--w:1376px;--h:1032px"><iframe src="mockups/journal.html" width="1376" height="1032" loading="lazy" title="Journal on iPad"></iframe></div>
+  <h3>Mac</h3>
+  <div class="scaled" style="--w:1280px;--h:820px"><iframe src="mockups/today.html?state=plan" width="1280" height="820" loading="lazy" title="Today on Mac"></iframe></div>
+  <div class="scaled" style="--w:1280px;--h:820px"><iframe src="mockups/summary.html" width="1280" height="820" loading="lazy" title="End of session on Mac"></iframe></div>
+
+  <h2 id="decisiones">7. Lo que te toca decidir</h2>
+  <ol>
+    <li><b>La dirección.</b> ¿Esto es lo que querías decir con "limpio, tipo Linear y Morse"? Qué sobra, qué falta, qué pantalla te convence menos.</li>
+    <li><b>El acento.</b> Los mockups usan un bermellón apagado (E2643F). Alternativas: ámbar (D9A441), el azul desaturado de Linear (5E6AD2), o ningún color y todo en blanco sobre negro con el acento solo en Start.</li>
+    <li><b>Tipografía.</b> Inter y JetBrains Mono como en los mockups (dos fuentes de licencia libre que se sirven con la app), o el sistema (SF en Apple, cero descargas).</li>
+    <li><b>Los nombres.</b> Today, Path, Journal. Y "Session" para el modo. En inglés, como la app.</li>
+    <li><b>La semana.</b> 5 de 7 con 2 días de reserva como meta por defecto, ajustable. Y el total de días dibujados como número que solo crece. ¿Quieres además una racha clásica, escondida por defecto?</li>
+    <li><b>El stack, después de lo anterior.</b> Con esta dirección, mi recomendación es Svelte 5 con Vite: componentes pequeños, transiciones de 160 ms declarativas, IndexedDB igual que ahora, PWA instalable, desplegable en Vercel como estático. Vanilla sigue siendo viable pero cada transición y cada estado se escribe a mano. React con Tailwind funciona, pero la estética de utilidades encaja peor con un sistema de tokens tan estricto.</li>
+  </ol>
+
+  <h2 id="fuentes">8. Fuentes</h2>
+  <ul>
+    <li><a href="https://lawsofux.com/">Laws of UX</a>: Hick, Fitts, Peak-End, Goal-Gradient, Zeigarnik, Doherty, Tesler, Von Restorff, Parkinson.</li>
+    <li><a href="https://www.nngroup.com/articles/ten-usability-heuristics/">Nielsen Norman Group</a>: heurísticas, estados vacíos, onboarding, indicadores de progreso, tiempos de respuesta, peak-end.</li>
+    <li><a href="https://www.sglavoie.com/posts/2023/09/09/book-summary-refactoring-ui/">Refactoring UI</a> (resumen): jerarquía por peso y color, espacio antes que bordes, HSL y saturación en fondos oscuros.</li>
+    <li><a href="https://academic.oup.com/jcr/article-abstract/49/6/1095/6623414">Silverman &amp; Barasch 2023</a>, <a href="https://anderson-review.ucla.edu/emergency-reserves/">Sharif &amp; Shu</a>, <a href="https://blog.duolingo.com/how-duolingo-streak-builds-habit">Duolingo</a>, <a href="https://jamesclear.com/second-mistake">Clear</a>, <a href="https://home.uchicago.edu/ourminsky/Goal-Gradient_Illusionary_Goal_Progress.pdf">Kivetz, Urminsky &amp; Zheng</a>, <a href="https://behaviormodel.org/">Fogg</a>.</li>
+    <li><a href="https://github.com/googlecreativelab/morse-learn">Morse Typing Trainer</a> (código), <a href="https://linear.app/now/behind-the-latest-design-refresh">Linear</a>, <a href="https://linear.app/method/introduction">Linear Method</a>, <a href="https://emilkowal.ski/ui/good-vs-great-animations">Kowalski</a>, <a href="https://blakecrosley.com/guides/design/duolingo">Crosley sobre Duolingo</a>, <a href="https://www.stayinsession.com/learn/getting-started-with-session-pomodoro-app">Session</a>, <a href="https://forestapp.cc/">Forest</a>, <a href="https://drawgestures.com/">DrawGestures</a>, <a href="https://line-of-action.com/article/sneak-peak-new-drawing-tools/">Line of Action</a>.</li>
+    <li>Apple HIG: <a href="https://developer.apple.com/design/human-interface-guidelines/layout">Layout</a>, <a href="https://developer.apple.com/design/human-interface-guidelines/multitasking">Multitasking</a>, <a href="https://developer.apple.com/design/human-interface-guidelines/dark-mode">Dark Mode</a>, <a href="https://developer.apple.com/design/human-interface-guidelines/typography">Typography</a>, <a href="https://developer.apple.com/design/human-interface-guidelines/buttons">Buttons</a>, <a href="https://developer.apple.com/design/human-interface-guidelines/motion">Motion</a>, <a href="https://developer.apple.com/design/human-interface-guidelines/feedback">Feedback</a>; <a href="https://webkit.org/blog/7929/designing-websites-for-iphone-x/">WebKit</a> sobre áreas seguras; <a href="https://codelabs.developers.google.com/codelabs/design-material-darktheme">Material</a> sobre tema oscuro.</li>
+  </ul>
+</article>
+<script src="mockups/mock.js"></script>
+</body>
+</html>

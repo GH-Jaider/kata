@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kata · Path</title>
+<script>if (new URLSearchParams(location.search).get('theme') === 'dark') document.documentElement.dataset.theme = 'dark';</script>
+<link rel="stylesheet" href="poster.css">
+<style>
+  .head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; }
+  .part { margin-top: 32px; }
+  .part .k { color: var(--mute); margin-bottom: 10px; display: block; }
+</style>
+</head>
+<body>
+<header class="mast">
+  <span class="brand">Kata</span>
+  <nav><a href="today.html">Today</a><a class="on" href="path.html">Path</a><a href="journal.html">Journal</a></nav>
+  <span class="meta">Drawabox · drawabox.com ↗</span>
+</header>
+<main class="page wrap">
+  <div class="head">
+    <div><div class="k mute">Drawabox · 11 units</div><h1 class="h-poster" style="margin-top:6px">Path</h1></div>
+    <div class="stats">
+      <div><div class="v num">37</div><div class="l">Days drawn</div></div>
+      <div><div class="v num">12<small>h 40m</small></div><div class="l">Study</div></div>
+      <div><div class="v num">2<small>of 11</small></div><div class="l">Units</div></div>
+    </div>
+  </div>
+
+  <div class="path-grid" style="margin-top:32px">
+    <div>
+      <section class="part" style="margin-top:0">
+        <span class="k">Part one · The basics</span>
+        <div class="units">
+          <div class="unit done"><div class="no">00</div><div><div class="nm">Getting started</div><div class="sb">Lesson 0 · read</div></div><div class="q">1<small> / 1</small></div></div>
+          <div class="unit done"><div class="no">01</div><div><div class="nm">Lines, ellipses and boxes</div><div class="sb">Lesson 1 · 10 exercises · feedback received</div></div><div class="q">16<small> / 16 p</small></div></div>
+          <div class="unit on"><div class="no">02</div><div><div class="nm">250 Box Challenge</div><div class="sb">The Next Fifty · 5 or 6 per page, extensions after each page</div></div><div class="q">62<small> / 250</small></div><div class="prog"><i style="width:25%"></i></div></div>
+          <div class="unit locked"><div class="no">03</div><div><div class="nm">Contour lines, texture, construction</div><div class="sb">Lesson 2 · after 250 boxes</div></div><div class="q">0<small> / 13 p</small></div></div>
+        </div>
+      </section>
+      <section class="part">
+        <span class="k">Part two · Construction</span>
+        <div class="units">
+          <div class="unit locked"><div class="no">04</div><div><div class="nm">Plants</div><div class="sb">Lesson 3 · after Lesson 2</div></div><div class="q">0<small> / 11 p</small></div></div>
+          <div class="unit locked"><div class="no">05</div><div><div class="nm">Insects and arachnids</div><div class="sb">Lesson 4</div></div><div class="q">0<small> / 12 p</small></div></div>
+          <div class="unit locked"><div class="no">06</div><div><div class="nm">Animals</div><div class="sb">Lesson 5</div></div><div class="q">0<small> / 15 p</small></div></div>
+          <div class="unit locked"><div class="no">07</div><div><div class="nm">250 Cylinder Challenge</div><div class="sb">Between Lessons 5 and 6</div></div><div class="q">0<small> / 250</small></div></div>
+          <div class="unit locked"><div class="no">08</div><div><div class="nm">Everyday objects</div><div class="sb">Lesson 6 · after the cylinders</div></div><div class="q">0<small> / 11 p</small></div></div>
+          <div class="unit locked"><div class="no">09</div><div><div class="nm">25 Wheel Challenge</div><div class="sb">After Lesson 6</div></div><div class="q">0<small> / 25</small></div></div>
+          <div class="unit locked"><div class="no">10</div><div><div class="nm">Vehicles</div><div class="sb">Lesson 7 · after the wheels</div></div><div class="q">0<small> / 14 p</small></div></div>
+        </div>
+      </section>
+      <section class="part">
+        <span class="k">In parallel</span>
+        <div class="units">
+          <div class="unit locked"><div class="no">·</div><div><div class="nm">25 Texture Challenge</div><div class="sb">One row at a time, after Lesson 2</div></div><div class="q">0<small> / 25</small></div></div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="now-card">
+      <div class="k">Now · The Next Fifty</div>
+      <h2 class="h-big">Boxes with line extensions</h2>
+      <figure class="fig"><x-fig name="boxes"></x-fig></figure>
+      <div class="big num">62<small>/ 250</small></div>
+      <p class="small" style="opacity:.9">No vanishing points on the page, shallow foreshortening, five or six per page. Number them 51 to 100. Extend the lines before the next page.</p>
+      <div class="acts"><button class="btn paper">Open the card</button><button class="btn text dim">+1 box</button><button class="btn text dim">Lesson on drawabox.com ↗</button></div>
+    </aside>
+  </div>
+</main>
+<script src="../mockups/mock.js"></script>
+</body>
+</html>

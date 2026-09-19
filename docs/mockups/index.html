@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kata · Mockups</title>
+<link rel="stylesheet" href="kata.css">
+<style>
+  body { padding: 40px; }
+  h1 { margin-bottom: 4px; }
+  .set { margin-top: 40px; }
+  .frames { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; margin-top: 12px; }
+  .frame { display: grid; gap: 8px; }
+  .frame iframe { border: 1px solid var(--line-2); border-radius: 12px; background: var(--bg); }
+  .frame.scaled { --s: .6; }
+  .frame.scaled .box { width: calc(var(--w) * var(--s)); height: calc(var(--h) * var(--s)); overflow: hidden; }
+  .frame.scaled iframe { transform: scale(var(--s)); transform-origin: top left; }
+</style>
+</head>
+<body>
+<span class="mono">Kata · design exploration v0.2</span>
+<h1 class="display">Mockups</h1>
+<p class="body">Real content, real widths. 375 is an iPad at one third next to Procreate (and a phone), 683 is half of a 13-inch iPad, 1376 by 1032 is the 13-inch iPad in landscape, 1032 by 1376 in portrait, 1280 is a Mac window. Add <code>?theme=light</code> to any page for the light version.</p>
+<script>
+  // Widths: 375 = iPad at one third next to Procreate (also a phone), 683 = half of a 13-inch iPad,
+  // 1032 = iPad portrait, 1376 = 13-inch iPad landscape, 1280 = Mac window.
+  const sets = [
+    ['Today', [['today.html?state=plan', 375, 812], ['today.html?state=plan', 683, 900], ['today.html?state=plan', 1376, 1032], ['today.html?state=plan', 1280, 820]]],
+    ['Today, first run and done', [['today.html?state=fresh', 375, 812], ['today.html?state=done', 375, 812], ['today.html?state=done', 1376, 1032], ['today.html?state=done&theme=light', 1376, 1032]]],
+    ['Session', [['session.html', 375, 812], ['session.html', 683, 900], ['session.html', 1376, 1032], ['session.html?theme=light', 1376, 1032]]],
+    ['End of session', [['summary.html', 375, 812], ['summary.html', 683, 900], ['summary.html', 1376, 1032]]],
+    ['Exercise card', [['ficha.html', 375, 900], ['ficha.html', 683, 760], ['ficha.html', 1376, 1032], ['ficha.html?theme=light', 1376, 1032]]],
+    ['Path', [['path.html', 375, 1100], ['path.html', 683, 1000], ['path.html', 1376, 1032], ['path.html', 1280, 1000]]],
+    ['Journal', [['journal.html', 375, 1100], ['journal.html', 683, 1000], ['journal.html', 1376, 1032]]],
+    ['iPad portrait', [['today.html?state=plan', 1032, 1376], ['session.html', 1032, 1376]]],
+  ];
+  for (const [title, frames] of sets) {
+    const s = document.createElement('section'); s.className = 'set';
+    s.innerHTML = `<span class="mono">${title}</span><div class="frames">${frames.map(([src, w, h]) => w > 700
+      ? `<div class="frame scaled" style="--w:${w}px;--h:${h}px"><div class="box"><iframe src="${src}" width="${w}" height="${h}" loading="lazy"></iframe></div><span class="mono">${src} · ${w} × ${h} at 60%</span></div>`
+      : `<div class="frame"><iframe src="${src}" width="${w}" height="${h}" loading="lazy"></iframe><span class="mono">${src} · ${w} × ${h}</span></div>`).join('')}</div>`;
+    document.body.append(s);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kata · Path</title>
+<script>if (new URLSearchParams(location.search).get('theme') === 'light') document.documentElement.dataset.theme = 'light';</script>
+<link rel="stylesheet" href="kata.css">
+<style>
+  .unit { display: grid; grid-template-columns: 36px 1fr auto; gap: 14px; align-items: center; padding: 14px 0; border-top: 1px solid var(--line); }
+  .unit:first-child { border-top: 0; }
+  .unit .g { width: 36px; height: 36px; border-radius: 9px; display: grid; place-items: center; color: var(--fg); background: var(--bg-2); }
+  .unit .g svg { width: 20px; height: 20px; }
+  .unit .name { font-weight: 500; }
+  .unit .sub { font-size: 13px; color: var(--fg-2); margin-top: 2px; }
+  .unit .n { font-family: var(--mono); font-size: 12px; color: var(--fg-3); }
+  .unit.done .g { color: var(--ok); }
+  .unit.on .g { color: var(--accent); background: var(--accent-soft); }
+  .unit.locked { opacity: .5; }
+  .ex { display: grid; grid-template-columns: 1fr auto; gap: 4px 14px; padding: 12px 0 12px 50px; border-top: 1px solid var(--line); align-items: center; }
+  .ex .name { font-size: 14px; }
+  .ex .n { font-family: var(--mono); font-size: 11px; color: var(--fg-3); }
+  .ex .progress { grid-column: 1 / -1; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="app">
+  <x-nav on="path"></x-nav>
+  <div class="content">
+    <main class="page">
+      <div class="topbar"><span class="mono">Drawabox · 11 units</span><a class="mono ext" href="#">drawabox.com</a></div>
+      <h1 class="display">Path</h1>
+      <div class="glyphs" style="margin-top:18px">
+        <span class="g done"><x-glyph name="l0"></x-glyph></span><span class="g done"><x-glyph name="l1"></x-glyph></span><span class="g on"><x-glyph name="boxes"></x-glyph></span><span class="g"><x-glyph name="l2"></x-glyph></span><span class="g"><x-glyph name="l3"></x-glyph></span><span class="g"><x-glyph name="l4"></x-glyph></span><span class="g"><x-glyph name="l5"></x-glyph></span><span class="g"><x-glyph name="cyl"></x-glyph></span><span class="g"><x-glyph name="l6"></x-glyph></span><span class="g"><x-glyph name="wheels"></x-glyph></span><span class="g"><x-glyph name="l7"></x-glyph></span>
+      </div>
+      <div class="kv" style="margin-top:22px">
+        <div><div class="v num">37</div><div class="k">Days drawn</div></div>
+        <div><div class="v num">12h 40m</div><div class="k">Study</div></div>
+        <div><div class="v num">2 <span class="dim" style="font-size:14px;font-weight:500">of 11</span></div><div class="k">Units</div></div>
+      </div>
+
+      <section class="section">
+        <div class="section-head"><span class="mono">Part one · The basics</span></div>
+        <div class="unit done"><span class="g"><x-glyph name="l0"></x-glyph></span><div><div class="name">Lesson 0 · Getting started</div><div class="sub">Read</div></div><span class="n">1 / 1</span></div>
+        <div class="unit done"><span class="g"><x-glyph name="l1"></x-glyph></span><div><div class="name">Lesson 1 · Lines, ellipses and boxes</div><div class="sub">10 exercises · feedback received</div></div><span class="n">16 / 16 p</span></div>
+        <div class="unit on"><span class="g"><x-glyph name="boxes"></x-glyph></span><div><div class="name">250 Box Challenge</div><div class="sub">The Next Fifty · 5 or 6 per page, extensions after each page</div></div><span class="n">62 / 250</span></div>
+        <div class="ex"><span class="name">Boxes with line extensions</span><span class="n">62 / 250</span><div class="progress"><i style="width:25%"></i></div></div>
+        <div class="unit locked"><span class="g"><x-glyph name="l2"></x-glyph></span><div><div class="name">Lesson 2 · Contour lines, texture, construction</div><div class="sub">After 250 boxes</div></div><span class="n">0 / 13 p</span></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head"><span class="mono">Part two · Construction</span></div>
+        <div class="unit locked"><span class="g"><x-glyph name="l3"></x-glyph></span><div><div class="name">Lesson 3 · Plants</div><div class="sub">After Lesson 2</div></div><span class="n">0 / 11 p</span></div>
+        <div class="unit locked"><span class="g"><x-glyph name="l4"></x-glyph></span><div><div class="name">Lesson 4 · Insects and arachnids</div><div class="sub">After Lesson 3</div></div><span class="n">0 / 12 p</span></div>
+        <div class="unit locked"><span class="g"><x-glyph name="l5"></x-glyph></span><div><div class="name">Lesson 5 · Animals</div><div class="sub">After Lesson 4</div></div><span class="n">0 / 15 p</span></div>
+        <div class="unit locked"><span class="g"><x-glyph name="cyl"></x-glyph></span><div><div class="name">250 Cylinder Challenge</div><div class="sub">Between Lessons 5 and 6</div></div><span class="n">0 / 250</span></div>
+        <div class="unit locked"><span class="g"><x-glyph name="l6"></x-glyph></span><div><div class="name">Lesson 6 · Everyday objects</div><div class="sub">After Lesson 5 and the cylinders</div></div><span class="n">0 / 11 p</span></div>
+        <div class="unit locked"><span class="g"><x-glyph name="wheels"></x-glyph></span><div><div class="name">25 Wheel Challenge</div><div class="sub">After Lesson 6</div></div><span class="n">0 / 25</span></div>
+        <div class="unit locked"><span class="g"><x-glyph name="l7"></x-glyph></span><div><div class="name">Lesson 7 · Vehicles</div><div class="sub">After the wheels</div></div><span class="n">0 / 14 p</span></div>
+      </section>
+      <section class="section">
+        <div class="section-head"><span class="mono">In parallel</span></div>
+        <div class="unit locked"><span class="g"><x-glyph name="textures"></x-glyph></span><div><div class="name">25 Texture Challenge</div><div class="sub">One row at a time, after Lesson 2</div></div><span class="n">0 / 25</span></div>
+      </section>
+    </main>
+  </div>
+</div>
+<script src="mock.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kata · Journal</title>
+<script>if (new URLSearchParams(location.search).get('theme') === 'dark') document.documentElement.dataset.theme = 'dark';</script>
+<link rel="stylesheet" href="poster.css">
+<style>
+  .head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; }
+  .thennow { margin-top: 28px; display: grid; gap: 20px; }
+  @media (min-width: 900px) { .thennow { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); align-items: end; } }
+  .thennow .pair { margin-top: 0; }
+  .thennow .sel { font-weight: 700; font-size: 20px; letter-spacing: -.02em; }
+  .thennow .sel span { color: var(--c2); }
+</style>
+</head>
+<body>
+<header class="mast">
+  <span class="brand">Kata</span>
+  <nav><a href="today.html">Today</a><a href="path.html">Path</a><a class="on" href="journal.html">Journal</a></nav>
+  <span class="meta">September · 14 days drawn</span>
+</header>
+<main class="page wrap">
+  <div class="head">
+    <div><div class="k mute">September · 14 days drawn</div><h1 class="h-poster" style="margin-top:6px">Journal</h1></div>
+    <div class="month">
+      <i class="on"></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i><i></i>
+      <i class="on"></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i></i><i></i>
+      <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="today"></i><i class="blank"></i><i class="blank"></i>
+    </div>
+  </div>
+
+  <section class="thennow">
+    <div class="pair">
+      <figure><div class="ph then fig"><x-fig name="ghosted"></x-fig></div><figcaption class="cap">Day 1 · 12 Aug</figcaption></figure>
+      <figure><div class="ph fig"><x-fig name="ghosted"></x-fig></div><figcaption class="cap"><b>Tue 16 Sep</b></figcaption></figure>
+    </div>
+    <div><div class="k mute">Then and now</div><div class="sel" style="margin-top:6px"><span>Ghosted lines</span> ▾</div><p class="small mute" style="margin-top:8px">Your first page of an exercise next to the latest. Pick any exercise you have photographed twice.</p></div>
+  </section>
+
+  <div class="days">
+    <section class="day">
+      <div class="hd"><b>Thu 17 Sep</b><span class="small mute">31 min study · 25 min play</span></div>
+      <div class="tiles">
+        <figure class="tile c2"><div class="ph fig"><x-fig name="boxes"></x-fig></div><figcaption class="cap"><b>Boxes 57 to 62</b><span>Paper</span></figcaption></figure>
+        <figure class="tile c1"><div class="ph fig"><x-fig name="ellipses"></x-fig></div><figcaption class="cap"><b>Tables of ellipses</b><span>Warm-up</span></figcaption></figure>
+      </div>
+    </section>
+    <section class="day">
+      <div class="hd"><b>Tue 16 Sep</b><span class="small mute">28 min study · 40 min play</span></div>
+      <div class="tiles">
+        <figure class="tile c1"><div class="ph fig"><x-fig name="ghosted"></x-fig></div><figcaption class="cap"><b>Ghosted lines</b><span>Warm-up</span></figcaption></figure>
+        <figure class="tile c2"><div class="ph fig"><x-fig name="boxes"></x-fig></div><figcaption class="cap"><b>Boxes 51 to 56</b><span>Paper</span></figcaption></figure>
+        <figure class="tile c3"><div class="ph fig"><x-fig name="leaf"></x-fig></div><figcaption class="cap"><b>Free drawing</b><span>Tablet</span></figcaption></figure>
+      </div>
+    </section>
+  </div>
+</main>
+<script src="../mockups/mock.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B · Instrument · Today</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* B. Instrument: a precise tool. Dot grid, keycaps, one amber signal. Lowercase labels, dense but calm. */
+  :root { --bg: #111210; --dot: rgba(255,255,255,.10); --fg: #E9E6DD; --fg-2: #9C9A92; --fg-3: #5E5D57; --line: #2C2D29; --amber: #F2B441; --key: #1A1B18; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg) radial-gradient(var(--dot) 1px, transparent 1px) 0 0 / 22px 22px; color: var(--fg); font-family: "Space Grotesk", system-ui, sans-serif; font-size: 16px; line-height: 1.4; -webkit-font-smoothing: antialiased; }
+  .rig { min-height: 100vh; display: grid; grid-template-columns: minmax(0, 1fr) 96px; }
+  .main { padding: 36px 32px 40px 40px; display: flex; flex-direction: column; min-width: 0; }
+  .mono { font-family: "Space Mono", monospace; font-size: 12px; color: var(--fg-2); }
+  h1 { font-weight: 500; font-size: 40px; letter-spacing: -.02em; line-height: 1; margin: 18px 0 0; }
+  h1 span { color: var(--fg-3); }
+  .plan { margin-top: 40px; display: grid; gap: 14px; }
+  .blk { display: grid; grid-template-columns: 120px 1fr; gap: 18px; padding: 18px 0 20px; border-top: 1px solid var(--line); }
+  .blk .m { font-family: "Space Mono", monospace; font-size: 54px; line-height: .9; letter-spacing: -.04em; }
+  .blk .m small { font-size: 12px; letter-spacing: 0; color: var(--fg-3); display: block; margin-top: 8px; }
+  .blk .n { font-weight: 500; font-size: 18px; }
+  .blk .d { color: var(--fg-2); margin-top: 4px; font-size: 15px; }
+  .blk.now .m { color: var(--amber); }
+  .blk.now .n::after { content: " ●"; color: var(--amber); font-size: 10px; vertical-align: middle; }
+  .keys { margin-top: auto; padding-top: 40px; display: flex; gap: 12px; align-items: stretch; }
+  .key { font: inherit; font-weight: 500; color: var(--fg); background: var(--key); border: 1px solid var(--line); border-bottom-width: 3px; border-radius: 6px; padding: 14px 20px; cursor: pointer; text-align: left; min-width: 150px; }
+  .key .mono { display: block; margin-bottom: 8px; color: var(--fg-3); }
+  .key.go { background: var(--amber); color: #1A1200; border-color: #B8861F; }
+  .key.go .mono { color: #6E4F0C; }
+  .rail { border-left: 1px solid var(--line); padding: 36px 0; display: flex; flex-direction: column; align-items: center; gap: 28px; background: rgba(0,0,0,.25); }
+  .rail .mono { writing-mode: vertical-rl; transform: rotate(180deg); letter-spacing: .1em; }
+  .rail .week { display: grid; gap: 6px; }
+  .rail .week i { width: 26px; height: 8px; border-radius: 2px; background: var(--line); }
+  .rail .week i.on { background: var(--fg-2); }
+  .rail .week i.today { background: var(--amber); }
+  .rail .tab { width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 6px; display: grid; place-items: center; color: var(--fg-3); font-family: "Space Mono", monospace; font-size: 11px; }
+  .rail .tab.on { color: var(--fg); border-color: var(--fg-2); }
+  .rail .sp { flex: 1; }
+</style>
+</head>
+<body>
+<div class="rig">
+  <div class="main">
+    <div class="mono">fri 18 sep · week 03 · paper</div>
+    <h1>today <span>/ about 30 min</span></h1>
+    <div class="plan">
+      <div class="blk"><div class="m">10<small>min</small></div><div><div class="n">warm-up</div><div class="d">ghosted lines · tables of ellipses</div></div></div>
+      <div class="blk now"><div class="m">20<small>min</small></div><div><div class="n">boxes with line extensions</div><div class="d">62 / 250 · the next fifty · no vanishing points on the page</div></div></div>
+      <div class="blk"><div class="m">30<small>min</small></div><div><div class="n">free drawing</div><div class="d">whatever you like · the 50% rule</div></div></div>
+    </div>
+    <div class="keys">
+      <button class="key go"><span class="mono">enter</span>start session</button>
+      <button class="key"><span class="mono">l</span>log practice</button>
+      <button class="key"><span class="mono">s</span>shuffle warm-ups</button>
+    </div>
+  </div>
+  <aside class="rail">
+    <div class="tab on">T</div><div class="tab">P</div><div class="tab">J</div>
+    <div class="sp"></div>
+    <div class="week"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="today"></i><i></i><i></i></div>
+    <div class="mono">4 of 5 · 2 spare</div>
+  </aside>
+</div>
+</body>
+</html>

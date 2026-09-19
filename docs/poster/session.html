@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kata · Session</title>
+<link rel="stylesheet" href="poster.css">
+</head>
+<body>
+<div class="session" id="s">
+  <div class="s-top"><span id="kind">Homework · 20 min</span><div class="segs"><i class="done"></i><i class="done"></i><i class="on"></i><i class="long"></i></div><span>3 of 4</span></div>
+  <div class="s-head">
+    <h1 class="h-poster" id="title">Boxes with line extensions</h1>
+    <p class="lead" id="lead">The Next Fifty. No vanishing points on the page, shallow foreshortening, five or six per page. Extend the lines before the next page. <a href="#">Steps</a></p>
+  </div>
+  <div class="s-mid">
+    <figure class="fig" id="fig"><x-fig name="boxes"></x-fig></figure>
+    <div class="t num">18:24<small id="tsub">left · 67 of 250 after this</small></div>
+  </div>
+  <div class="s-bottom">
+    <div class="cnt" id="cnt"><button class="round" aria-label="One less">−</button><span class="n num">5</span><button class="round" aria-label="One more">+</button><span class="k2">boxes<br>this block</span></div>
+    <div class="acts"><button class="btn text">Photo</button><button class="btn text dim">Pause</button><button class="btn text dim">End</button><button class="btn paper">Next →</button></div>
+  </div>
+</div>
+<script>
+  // ?b=warmup | play shows the other block colours.
+  const b = new URLSearchParams(location.search).get('b');
+  if (b === 'warmup') {
+    s.classList.add('c1'); kind.textContent = 'Warm-up · 5 min'; title.textContent = 'Ghosted lines';
+    lead.innerHTML = 'Two dots, ghost the line three times, then one confident stroke from the shoulder. Do not correct it. <a href="#">Steps</a>';
+    document.querySelector('.segs').innerHTML = '<i class="on"></i><i></i><i class="long"></i><i class="long"></i>'; document.querySelector('.s-top span:last-child').textContent = '1 of 4';
+    document.querySelector('.t').innerHTML = '4:51<small>left</small>'; document.querySelector('.cnt .k2').innerHTML = 'lines<br>this block'; document.querySelector('.cnt .n').textContent = '0';
+    fig.innerHTML = ''; const f = document.createElement('x-fig'); f.setAttribute('name', 'ghosted'); fig.append(f);
+  }
+  if (b === 'play') {
+    s.classList.add('c3'); kind.textContent = 'Free drawing · 30 min'; title.textContent = 'Whatever you like.';
+    lead.innerHTML = 'No exercise, no counting. This is the half that keeps you drawing.';
+    document.querySelector('.segs').innerHTML = '<i class="done"></i><i class="done"></i><i class="done"></i><i class="long on"></i>'; document.querySelector('.s-top span:last-child').textContent = '4 of 4';
+    document.querySelector('.t').innerHTML = '27:10<small>left</small>'; cnt.remove(); document.querySelector('.btn.paper').textContent = 'Finish →'; document.querySelector('.btn.paper').classList.replace('paper', 'ink'); document.querySelector('.btn.ink').style.background = 'var(--ink)'; document.querySelector('.btn.ink').style.color = 'var(--paper)';
+    fig.innerHTML = ''; const f = document.createElement('x-fig'); f.setAttribute('name', 'leaf'); fig.append(f);
+  }
+</script>
+<script src="../mockups/mock.js"></script>
+</body>
+</html>

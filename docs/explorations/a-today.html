@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A · Sheet · Today</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* A. Sheet: the UI is a sheet of paper. Ink, rules, a red pen in the margin. No cards, no chips, no pills. */
+  :root { --paper: #F3F0E8; --ink: #1B1A17; --ink-2: #5E5A52; --ink-3: #9A958A; --rule: #D9D4C7; --red: #B8321F; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Instrument Sans", system-ui, sans-serif; font-size: 16px; line-height: 1.4; -webkit-font-smoothing: antialiased; }
+  .sheet { min-height: 100vh; padding: 40px 44px 48px 56px; display: flex; flex-direction: column; }
+  .cap { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+  .top { display: flex; justify-content: space-between; align-items: baseline; }
+  .top .it { font-family: "Instrument Serif", serif; font-style: italic; font-size: 18px; color: var(--ink-2); }
+  h1 { font-family: "Instrument Serif", serif; font-weight: 400; font-size: 54px; line-height: 1.02; letter-spacing: -.01em; margin: 44px 0 0; max-width: 11ch; }
+  h1 em { font-style: italic; color: var(--ink-2); }
+  .ledger { margin-top: 44px; border-top: 1px solid var(--ink); }
+  .ln { display: grid; grid-template-columns: 64px 1fr 1.3fr; gap: 0 20px; padding: 16px 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .ln .m { font-family: "Instrument Serif", serif; font-size: 30px; line-height: 1; letter-spacing: -.02em; }
+  .ln .m sup { font-size: 14px; font-style: italic; vertical-align: super; color: var(--ink-3); margin-left: 1px; }
+  .ln .n { font-weight: 500; }
+  .ln .d { color: var(--ink-2); font-size: 15px; }
+  .ln.now .n::before { content: "→ "; color: var(--red); }
+  .actions { margin-top: 40px; display: flex; align-items: baseline; gap: 22px; }
+  .go { font-family: "Instrument Serif", serif; font-size: 28px; line-height: 1; color: var(--paper); background: var(--ink); border: 0; padding: 14px 26px 16px; border-radius: 3px; cursor: pointer; }
+  .or { color: var(--ink-2); font-size: 15px; }
+  .or a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--ink-3); text-underline-offset: 3px; }
+  .foot { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; padding-top: 48px; }
+  .note { font-family: "Instrument Serif", serif; font-style: italic; font-size: 19px; color: var(--ink-2); max-width: 30ch; }
+  .note a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--ink-3); text-underline-offset: 4px; text-decoration-style: dotted; }
+  .tally { text-align: right; }
+  .tally .marks { font-family: "Instrument Serif", serif; font-size: 34px; letter-spacing: .06em; color: var(--red); line-height: 1; }
+  .tally .marks i { font-style: normal; color: var(--rule); }
+  .tally .cap { margin-top: 8px; display: block; }
+  nav { position: absolute; left: 20px; top: 40px; bottom: 48px; width: 1px; }
+  nav a { position: absolute; left: -4px; writing-mode: vertical-rl; transform: rotate(180deg); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); text-decoration: none; }
+  nav a.on { color: var(--ink); }
+  nav a:nth-child(1) { bottom: 0; } nav a:nth-child(2) { bottom: 100px; } nav a:nth-child(3) { bottom: 172px; }
+</style>
+</head>
+<body>
+<nav><a class="on" href="#">Today</a><a href="#">Path</a><a href="#">Journal</a></nav>
+<div class="sheet">
+  <div class="top"><span class="cap">Friday, 18 September</span><span class="it">week three · on paper</span></div>
+  <h1>Thirty minutes, <em>then draw for yourself.</em></h1>
+  <div class="ledger">
+    <div class="ln"><span class="m">10<sup>min</sup></span><span class="n">Warm-up</span><span class="d">Ghosted lines, then tables of ellipses.</span></div>
+    <div class="ln now"><span class="m">20<sup>min</sup></span><span class="n">Boxes, 62 of 250</span><span class="d">The Next Fifty: no vanishing points on the page, shallow foreshortening.</span></div>
+    <div class="ln"><span class="m">30<sup>min</sup></span><span class="n">Free drawing</span><span class="d">Whatever you like. Half of your time is yours.</span></div>
+  </div>
+  <div class="actions"><button class="go">Begin</button><span class="or">or <a href="#">write down practice</a> you did without the timer</span></div>
+  <div class="foot">
+    <p class="note">Two warm-ups, chosen because you have not touched them in a while. <a href="#">Change them.</a></p>
+    <div class="tally"><div class="marks">||||<i>|||</i></div><span class="cap">4 of 5 this week · 2 spare</span></div>
+  </div>
+</div>
+</body>
+</html>

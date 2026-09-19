@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B · Instrument · Session</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #111210; --dot: rgba(255,255,255,.10); --fg: #E9E6DD; --fg-2: #9C9A92; --fg-3: #5E5D57; --line: #2C2D29; --amber: #F2B441; --key: #1A1B18; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg) radial-gradient(var(--dot) 1px, transparent 1px) 0 0 / 22px 22px; color: var(--fg); font-family: "Space Grotesk", system-ui, sans-serif; font-size: 16px; line-height: 1.4; -webkit-font-smoothing: antialiased; }
+  .rig { min-height: 100vh; display: grid; grid-template-columns: minmax(0, 1fr) 96px; }
+  .main { padding: 36px 32px 36px 40px; display: flex; flex-direction: column; min-width: 0; }
+  .mono { font-family: "Space Mono", monospace; font-size: 12px; color: var(--fg-2); }
+  .status { display: flex; justify-content: space-between; }
+  .status b { color: var(--amber); font-weight: 400; }
+  h1 { font-weight: 500; font-size: 34px; letter-spacing: -.02em; line-height: 1.05; margin: 14px 0 0; }
+  .d { color: var(--fg-2); margin-top: 8px; font-size: 15px; max-width: 50ch; }
+  .frame { margin-top: 26px; border: 1px solid var(--line); border-radius: 8px; position: relative; padding: 26px; background: rgba(0,0,0,.35); }
+  .frame::before, .frame::after { content: ""; position: absolute; width: 10px; height: 10px; border-color: var(--fg-3); border-style: solid; }
+  .frame::before { left: -1px; top: -1px; border-width: 1px 0 0 1px; }
+  .frame::after { right: -1px; bottom: -1px; border-width: 0 1px 1px 0; }
+  .frame svg { width: 100%; max-width: 440px; height: auto; margin: 0 auto; color: var(--fg); }
+  .frame svg * { vector-effect: non-scaling-stroke; }
+  .frame .tag { position: absolute; left: 14px; top: 10px; }
+  .frame .tag2 { position: absolute; right: 14px; bottom: 10px; color: var(--fg-3); }
+  .readout { margin-top: 26px; display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 24px; }
+  .readout .t { font-family: "Space Mono", monospace; font-size: clamp(64px, 14vw, 112px); line-height: .9; letter-spacing: -.06em; color: var(--amber); }
+  .readout .t small { font-size: 12px; letter-spacing: .1em; color: var(--fg-3); display: block; margin-top: 12px; }
+  .cnt { display: flex; align-items: center; gap: 8px; }
+  .cnt .n { font-family: "Space Mono", monospace; font-size: 44px; letter-spacing: -.04em; min-width: 72px; text-align: center; }
+  .cnt .k { font: inherit; color: var(--fg); background: var(--key); border: 1px solid var(--line); border-bottom-width: 3px; border-radius: 6px; width: 44px; height: 44px; cursor: pointer; font-size: 20px; }
+  .cnt .lbl { margin-left: 8px; }
+  .cnt .lbl div { font-size: 14px; }
+  .cnt .lbl .mono { display: block; margin-top: 2px; }
+  .bar { margin-top: 18px; height: 6px; border: 1px solid var(--line); border-radius: 3px; position: relative; }
+  .bar i { position: absolute; left: 0; top: 0; bottom: 0; width: 9%; background: var(--amber); border-radius: 2px; }
+  .keys { margin-top: auto; padding-top: 30px; display: flex; gap: 12px; }
+  .key { font: inherit; font-weight: 500; color: var(--fg); background: var(--key); border: 1px solid var(--line); border-bottom-width: 3px; border-radius: 6px; padding: 14px 20px; cursor: pointer; text-align: left; min-width: 140px; }
+  .key .mono { display: block; margin-bottom: 8px; color: var(--fg-3); }
+  .key.go { background: var(--amber); color: #1A1200; border-color: #B8861F; }
+  .key.go .mono { color: #6E4F0C; }
+  .key.dim { min-width: 0; color: var(--fg-2); }
+  .rail { border-left: 1px solid var(--line); padding: 36px 0; display: flex; flex-direction: column; align-items: center; gap: 12px; background: rgba(0,0,0,.25); }
+  .rail .seg { width: 26px; height: 46px; border: 1px solid var(--line); border-radius: 3px; }
+  .rail .seg.done { background: var(--fg-3); border-color: transparent; }
+  .rail .seg.on { background: var(--amber); border-color: transparent; }
+  .rail .seg.long { height: 76px; }
+  .rail .sp { flex: 1; }
+  .rail .mono { writing-mode: vertical-rl; transform: rotate(180deg); letter-spacing: .1em; }
+</style>
+</head>
+<body>
+<div class="rig">
+  <div class="main">
+    <div class="status mono"><span>block <b>03</b> / 04 · homework</span><span>esc back</span></div>
+    <h1>boxes with line extensions</h1>
+    <p class="d">the next fifty · no vanishing points on the page · shallow foreshortening · 5 or 6 per page · extend the lines before the next page</p>
+    <div class="frame"><span class="tag mono">fig 2.1</span><x-fig name="boxes"></x-fig><span class="tag2 mono">seen ×6 · ? steps</span></div>
+    <div class="readout">
+      <div class="t">18:24<small>REMAINING</small></div>
+      <div class="cnt"><button class="k">−</button><span class="n">05</span><button class="k">+</button><div class="lbl"><div>boxes this block</div><span class="mono">67 / 250 after</span></div></div>
+    </div>
+    <div class="bar"><i></i></div>
+    <div class="keys">
+      <button class="key"><span class="mono">p</span>photo</button>
+      <button class="key go"><span class="mono">n</span>next block</button>
+      <button class="key dim"><span class="mono">space</span>pause</button>
+      <button class="key dim"><span class="mono">esc</span>end</button>
+    </div>
+  </div>
+  <aside class="rail">
+    <div class="seg done"></div><div class="seg done"></div><div class="seg on"></div><div class="seg long"></div>
+    <div class="sp"></div>
+    <div class="mono">18:24 · 5 boxes</div>
+  </aside>
+</div>
+<script src="../mockups/mock.js"></script>
+</body>
+</html>

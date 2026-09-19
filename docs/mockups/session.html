@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kata · Session</title>
+<script>if (new URLSearchParams(location.search).get('theme') === 'light') document.documentElement.dataset.theme = 'light';</script>
+<link rel="stylesheet" href="kata.css">
+<style>
+  .run { min-height: 100vh; display: flex; flex-direction: column; padding: 16px 20px 20px; max-width: 1080px; margin: 0 auto; width: 100%; }
+  .run .top { display: flex; align-items: center; gap: 14px; height: 44px; }
+  .run .grid { flex: 1; display: grid; gap: 28px; align-content: start; margin-top: 8px; }
+  .fig-wrap .caption .mono { font-size: 10px; }
+  .run .head .display { margin-top: 6px; }
+  .run .head .body { margin-top: 6px; max-width: 46ch; }
+  .fig-wrap { display: grid; gap: 10px; }
+  .fig-wrap .figure { max-width: 360px; }
+  .fig-wrap .caption { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .clockbox { display: grid; gap: 14px; justify-items: start; }
+  .clockbox .timer { font-size: clamp(64px, 20vw, 104px); }
+  .clockbox .progress { width: 100%; max-width: 360px; }
+  .count { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .count .k { font-size: 13px; color: var(--fg-2); }
+  .actions { display: grid; gap: 10px; margin-top: auto; padding-top: 24px; }
+  .actions .quiet-row { display: flex; justify-content: center; gap: 22px; }
+  @media (min-width: 600px) {
+    .run { padding: 20px 32px 28px; }
+    .run .grid { flex: none; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 24px 48px; margin-top: 28px; align-content: start; }
+    .run .grid > :first-child { grid-row: 1 / span 2; }
+    .clockbox { gap: 18px; padding-top: 6px; }
+    .actions { grid-column: 2; margin-top: 0; padding-top: 12px; }
+    .clockbox .timer { font-size: clamp(72px, 12vw, 128px); }
+    .fig-wrap .figure { max-width: 420px; }
+  }
+  @media (min-width: 1000px) and (min-height: 700px) {
+    .run { justify-content: center; padding: 28px 48px 40px; }
+    .run .top { position: absolute; left: 48px; right: 48px; top: 28px; }
+    .run .grid { margin: 0 auto; width: 100%; max-width: 1100px; gap: 32px 80px; align-items: center; }
+    .run .grid > :first-child { grid-row: 1 / span 2; }
+    .fig-wrap .figure { max-width: 520px; }
+    .clockbox .timer { font-size: clamp(96px, 11vw, 160px); }
+    .clockbox .progress { max-width: 440px; }
+  }
+</style>
+</head>
+<body>
+<div class="run">
+  <div class="top">
+    <button class="icon-btn" aria-label="Back to Today"><x-icon name="back"></x-icon></button>
+    <div class="segments" aria-label="Block 3 of 4"><i class="w done"></i><i class="w done"></i><i class="on"></i><i class="p"></i></div>
+    <span class="mono num">3 / 4</span>
+  </div>
+
+  <div class="grid">
+    <div>
+      <div class="head">
+        <span class="mono on">Homework · 20 min</span>
+        <h1 class="display">Boxes with line extensions</h1>
+        <p class="body">The Next Fifty. No vanishing points on the page, shallow foreshortening, five or six per page. Extend the lines before the next page.</p>
+      </div>
+      <div class="fig-wrap" style="margin-top:22px">
+        <figure class="figure hero"><x-fig name="boxes"></x-fig></figure>
+        <div class="caption"><span class="mono">Fig 2.1 · Seen 6 times</span><button class="btn quiet sm">Show steps</button></div>
+      </div>
+    </div>
+
+    <div class="clockbox">
+      <div class="timer num">18:24</div>
+      <div class="progress accent"><i style="width:9%"></i></div>
+      <div class="count" style="margin-top:8px">
+        <div class="stepper"><button aria-label="One less box"><x-icon name="minus"></x-icon></button><span class="n">5</span><button aria-label="One more box"><x-icon name="plus"></x-icon></button></div>
+        <div class="k">boxes this block<br><span class="dim num">67 / 250 after this</span></div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <div class="btns"><button class="btn lg"><x-icon name="camera"></x-icon>Photo</button><button class="btn primary lg">Next<x-icon name="next"></x-icon></button></div>
+      <div class="quiet-row"><button class="btn quiet sm">Pause</button><button class="btn quiet sm">End session</button></div>
+    </div>
+  </div>
+</div>
+<script src="mock.js"></script>
+</body>
+</html>

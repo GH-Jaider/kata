@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><title>Kata · Exploraciones</title>
+<style>
+  body { margin: 0; padding: 40px; background: #141414; color: #ddd; font-family: system-ui, sans-serif; }
+  h1 { font-weight: 500; font-size: 22px; margin: 0 0 6px; }
+  p { color: #999; max-width: 70ch; margin: 0; }
+  .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 28px; }
+  .cell h2 { font-size: 13px; font-weight: 500; color: #aaa; margin: 0 0 8px; letter-spacing: .04em; text-transform: uppercase; }
+  .box { width: 100%; aspect-ratio: 683 / 1024; overflow: hidden; border-radius: 10px; border: 1px solid #333; background: #000; }
+  .box iframe { width: 683px; height: 1024px; border: 0; transform-origin: top left; }
+</style>
+</head>
+<body>
+<h1>Tres direcciones, dos pantallas, iPad a media pantalla (683 × 1024)</h1>
+<p>A. Sheet: papel y tinta, serif, un bolígrafo rojo en el margen. B. Instrument: herramienta precisa, rejilla de puntos, teclas, una señal ámbar. C. Poster: color plano a sangre por bloque y tipografía gigante, lo más cercano a Morse.</p>
+<div class="row" id="row"></div>
+<script>
+  const cells = [['A · Sheet · Today', 'a-today.html'], ['B · Instrument · Today', 'b-today.html'], ['C · Poster · Today', 'c-today.html'], ['A · Sheet · Session', 'a-session.html'], ['B · Instrument · Session', 'b-session.html'], ['C · Poster · Session', 'c-session.html']];
+  const row = document.getElementById('row');
+  for (const [t, src] of cells) {
+    const d = document.createElement('div'); d.className = 'cell';
+    d.innerHTML = `<h2>${t}</h2><div class="box"><iframe src="${src}" loading="lazy"></iframe></div>`;
+    row.append(d);
+  }
+  function fit() { for (const b of document.querySelectorAll('.box')) b.querySelector('iframe').style.transform = `scale(${b.clientWidth / 683})`; }
+  addEventListener('resize', fit); addEventListener('load', fit); fit();
+</script>
+</body>
+</html>

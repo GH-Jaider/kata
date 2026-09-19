@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A · Sheet · Session</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --paper: #F3F0E8; --ink: #1B1A17; --ink-2: #5E5A52; --ink-3: #9A958A; --rule: #D9D4C7; --red: #B8321F; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Instrument Sans", system-ui, sans-serif; font-size: 16px; line-height: 1.4; -webkit-font-smoothing: antialiased; }
+  .sheet { min-height: 100vh; padding: 40px 44px 44px 56px; display: flex; flex-direction: column; }
+  .cap { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); }
+  .top { display: flex; justify-content: space-between; align-items: baseline; }
+  .top .it { font-family: "Instrument Serif", serif; font-style: italic; font-size: 18px; color: var(--ink-2); }
+  h1 { font-family: "Instrument Serif", serif; font-weight: 400; font-size: 44px; line-height: 1.04; letter-spacing: -.01em; margin: 28px 0 0; }
+  .lead { margin: 10px 0 0; color: var(--ink-2); max-width: 52ch; font-size: 15px; }
+  .lead a { color: var(--ink); text-decoration: underline dotted; text-decoration-color: var(--ink-3); text-underline-offset: 4px; }
+  .fig { margin: 34px auto 0; max-width: 520px; color: var(--ink); }
+  .fig svg { width: 100%; height: auto; filter: url(#hand); }
+  .fig svg * { vector-effect: non-scaling-stroke; }
+  .figcap { margin-top: 8px; font-family: "Instrument Serif", serif; font-style: italic; color: var(--ink-3); font-size: 15px; text-align: center; }
+  .clock { margin-top: 40px; }
+  .clock .line { position: relative; height: 1px; background: var(--rule); }
+  .clock .line i { position: absolute; left: 0; top: -1px; height: 3px; width: 9%; background: var(--ink); }
+  .clock .line b { position: absolute; left: 9%; top: -5px; width: 1px; height: 11px; background: var(--red); }
+  .clock .row { display: flex; justify-content: space-between; align-items: baseline; margin-top: 12px; }
+  .clock .t { font-family: "Instrument Serif", serif; font-size: 56px; line-height: 1; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+  .clock .t em { font-size: 20px; color: var(--ink-3); margin-left: 8px; }
+  .count { display: flex; align-items: baseline; gap: 14px; }
+  .count .n { font-family: "Instrument Serif", serif; font-size: 56px; line-height: 1; letter-spacing: -.02em; }
+  .count .k { font-family: "Instrument Serif", serif; font-style: italic; font-size: 20px; color: var(--ink-3); }
+  .count button { font: inherit; border: 1px solid var(--ink); background: transparent; color: var(--ink); width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-size: 18px; line-height: 1; }
+  .actions { margin-top: auto; padding-top: 40px; display: flex; justify-content: space-between; align-items: baseline; }
+  .actions .go { font-family: "Instrument Serif", serif; font-size: 26px; color: var(--paper); background: var(--ink); border: 0; padding: 12px 24px 14px; border-radius: 3px; cursor: pointer; }
+  .actions .links a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--ink-3); text-underline-offset: 4px; margin-right: 22px; font-size: 15px; }
+  .actions .links a.dim { color: var(--ink-3); text-decoration-color: var(--rule); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><filter id="hand" x="-2%" y="-2%" width="104%" height="104%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="2.4" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
+<div class="sheet">
+  <div class="top"><span class="cap">Homework · block three of four</span><span class="it">twenty minutes</span></div>
+  <h1>Boxes with line extensions</h1>
+  <p class="lead">The Next Fifty. Five or six to a page, no vanishing points marked, shallow foreshortening. Extend the lines before you start the next page. <a href="#">The steps</a>, if you want them.</p>
+  <figure class="fig"><x-fig name="boxes"></x-fig><figcaption class="figcap">fig. 2.1, drawn through, extensions checked</figcaption></figure>
+  <div class="clock">
+    <div class="line"><i></i><b></b></div>
+    <div class="row">
+      <div class="t">18:24<em>left</em></div>
+      <div class="count"><button aria-label="one less">−</button><span class="n">5</span><span class="k">boxes so far</span><button aria-label="one more">+</button></div>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="links"><a href="#">Photograph the page</a><a class="dim" href="#">pause</a><a class="dim" href="#">end here</a></div>
+    <button class="go">Next →</button>
+  </div>
+</div>
+<script src="../mockups/mock.js"></script>
+</body>
+</html>
