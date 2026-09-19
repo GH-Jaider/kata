@@ -1,10 +1,10 @@
 <script>
-  import Mast from '../components/Mast.svelte';
-  import Figure from '../lib/figures/Figure.svelte';
-  import { figureFor } from '../lib/figures/library.js';
-  import { db, cur, tick } from '../lib/store.svelte.js';
-  import { navigate, toast } from '../lib/ui.svelte.js';
-  import * as L from '../lib/logic.js';
+  import Mast from '#components/Mast.svelte';
+  import Figure from '#lib/figures/Figure.svelte';
+  import { figureFor } from '#lib/figures/library.js';
+  import { db, cur, tick } from '#lib/store.svelte.js';
+  import { navigate, toast } from '#lib/ui.svelte.js';
+  import * as L from '#lib/logic.js';
   import { slide } from 'svelte/transition';
 
   const order = [...cur.order, ...cur.parallel];

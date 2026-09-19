@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import * as L from '../src/lib/logic.js';
+import * as L from '#lib/logic.js';
 
 const cur = JSON.parse(readFileSync(new URL('../curricula/drawabox.json', import.meta.url), 'utf8'));
 const settings = { studyMinutes: 30, warmupMinutes: 10, warmupCount: 2, playMinutes: 30 };

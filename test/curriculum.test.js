@@ -2,7 +2,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { units, exercises } from '../src/lib/logic.js';
+import { units, exercises } from '#lib/logic.js';
 
 const cur = JSON.parse(readFileSync(new URL('../curricula/drawabox.json', import.meta.url), 'utf8'));
 const UNITS = new Set(['pages', 'boxes', 'cylinders', 'wheels', 'rows', 'read']);

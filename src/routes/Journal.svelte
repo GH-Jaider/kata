@@ -1,12 +1,12 @@
 <script>
-  import Mast from '../components/Mast.svelte';
-  import PhotoPair from '../components/PhotoPair.svelte';
-  import Thumb from '../components/Thumb.svelte';
-  import Viewer from '../components/Viewer.svelte';
-  import { db, cur, deleteSession } from '../lib/store.svelte.js';
-  import { toast } from '../lib/ui.svelte.js';
-  import { figureFor } from '../lib/figures/library.js';
-  import * as L from '../lib/logic.js';
+  import Mast from '#components/Mast.svelte';
+  import PhotoPair from '#components/PhotoPair.svelte';
+  import Thumb from '#components/Thumb.svelte';
+  import Viewer from '#components/Viewer.svelte';
+  import { db, cur, deleteSession } from '#lib/store.svelte.js';
+  import { toast } from '#lib/ui.svelte.js';
+  import { figureFor } from '#lib/figures/library.js';
+  import * as L from '#lib/logic.js';
 
   const today = L.todayKey();
   const [Y, M] = today.split('-').map(Number);

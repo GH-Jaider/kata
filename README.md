@@ -14,10 +14,10 @@ The curriculum it ships with is [Drawabox](https://drawabox.com), the free funda
 ## Run
 
 ```
-npm install
-npm run dev        # http://localhost:5173
-npm run build      # static site in dist/
-npm run preview
+pnpm install
+pnpm dev           # http://localhost:5173
+pnpm build         # static site in dist/
+pnpm preview
 ```
 
 On the iPad, open the Mac's address on the same network, then Share → Add to Home Screen. Or deploy `dist/` anywhere static (Vercel, GitHub Pages).
@@ -54,8 +54,15 @@ Boxes and cylinders are generated from 3D with a pinhole camera, so every edge r
 ## Tests
 
 ```
-npm test               # curriculum, logic, geometry
-npm run dev            # in another terminal
-npm run test:browser   # headless Chrome: first session, photo, done, path, card, journal, settings, three widths
+pnpm test              # curriculum, logic, geometry
+pnpm dev               # in another terminal
+pnpm test:browser      # headless Chrome: first session, photo, done, path, card, journal, settings, three widths
 ```
 
+## Deploy
+
+Every push to `main` runs `.github/workflows/pages.yml`: tests, a build with `BASE_PATH` set to the repository path, and a deploy to GitHub Pages. The site needs no server because routing is hash-based and everything is stored in the browser. To host it anywhere else, run `pnpm build` (optionally with `BASE_PATH=/some/path/`) and serve `dist/`.
+
+## Imports
+
+Cross-folder imports use the subpath aliases declared in `package.json` (`#lib/…`, `#components/…`, `#curricula/…`). Node, Vite and the editor resolve them natively, so there is no alias config to keep in sync.

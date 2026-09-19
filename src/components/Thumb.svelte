@@ -1,6 +1,6 @@
 <script>
   // A photo from the local store, loaded lazily into an object URL.
-  import { photoBlob } from '../lib/store.svelte.js';
+  import { photoBlob } from '#lib/store.svelte.js';
   let { photo, alt = '' } = $props();
   let url = $state(null);
   $effect(() => {

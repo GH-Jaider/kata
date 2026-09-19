@@ -1,4 +1,4 @@
-// End-to-end walk through Kata in headless Chrome on a fresh profile (so a fresh database). Needs `npm run dev`.
+// End-to-end walk through Kata in headless Chrome on a fresh profile (so a fresh database). Needs `pnpm dev`.
 import { launch } from './cdp.mjs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';

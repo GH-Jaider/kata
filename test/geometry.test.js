@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { box, camera, project, vanishingPoint, circlePath, cylinder, cylinderInBox } from '../src/lib/figures/geometry.js';
+import { box, camera, project, vanishingPoint, circlePath, cylinder, cylinderInBox } from '#lib/figures/geometry.js';
 
 const dist = (p, q) => Math.hypot(p[0] - q[0], p[1] - q[1]);
 // Distance from point v to the infinite line through a and b.

@@ -1,13 +1,13 @@
 <script>
-  import Mast from '../components/Mast.svelte';
-  import Week from '../components/Week.svelte';
-  import LogSheet from '../components/LogSheet.svelte';
-  import Figure from '../lib/figures/Figure.svelte';
-  import { db, cur, setSettings } from '../lib/store.svelte.js';
-  import { run, startRun } from '../lib/run.svelte.js';
-  import { navigate, primeAudio } from '../lib/ui.svelte.js';
-  import * as L from '../lib/logic.js';
-  import { startTour, toured } from '../lib/tour.js';
+  import Mast from '#components/Mast.svelte';
+  import Week from '#components/Week.svelte';
+  import LogSheet from '#components/LogSheet.svelte';
+  import Figure from '#lib/figures/Figure.svelte';
+  import { db, cur, setSettings } from '#lib/store.svelte.js';
+  import { run, startRun } from '#lib/run.svelte.js';
+  import { navigate, primeAudio } from '#lib/ui.svelte.js';
+  import * as L from '#lib/logic.js';
+  import { startTour, toured } from '#lib/tour.js';
   import { onMount } from 'svelte';
 
   const today = L.todayKey();

@@ -1,5 +1,5 @@
 <script>
-  import { ui } from '../lib/ui.svelte.js';
+  import { ui } from '#lib/ui.svelte.js';
   let { meta = '' } = $props();
   const items = [['today', 'Today'], ['path', 'Path'], ['journal', 'Journal'], ['howto', 'How to']];
 </script>

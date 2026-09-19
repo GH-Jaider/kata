@@ -1,9 +1,9 @@
 <script>
   import { fade } from 'svelte/transition';
   import Thumb from './Thumb.svelte';
-  import { deletePhoto, cur } from '../lib/store.svelte.js';
-  import { exerciseById, fmtDate } from '../lib/logic.js';
-  import { toast } from '../lib/ui.svelte.js';
+  import { deletePhoto, cur } from '#lib/store.svelte.js';
+  import { exerciseById, fmtDate } from '#lib/logic.js';
+  import { toast } from '#lib/ui.svelte.js';
   let { photo, onclose } = $props();
   const ex = $derived(exerciseById(cur, photo.exerciseId));
   let confirm = $state(false);

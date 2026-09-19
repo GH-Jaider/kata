@@ -1,12 +1,12 @@
 <script>
-  import Mast from '../components/Mast.svelte';
-  import Figure from '../lib/figures/Figure.svelte';
-  import { figureFor } from '../lib/figures/library.js';
-  import { db, cur, tick } from '../lib/store.svelte.js';
-  import { startRun } from '../lib/run.svelte.js';
-  import { navigate, toast, primeAudio } from '../lib/ui.svelte.js';
-  import { cardFor } from '../lib/cards.js';
-  import * as L from '../lib/logic.js';
+  import Mast from '#components/Mast.svelte';
+  import Figure from '#lib/figures/Figure.svelte';
+  import { figureFor } from '#lib/figures/library.js';
+  import { db, cur, tick } from '#lib/store.svelte.js';
+  import { startRun } from '#lib/run.svelte.js';
+  import { navigate, toast, primeAudio } from '#lib/ui.svelte.js';
+  import { cardFor } from '#lib/cards.js';
+  import * as L from '#lib/logic.js';
 
   let { id } = $props();
   const ex = $derived(L.exerciseById(cur, id));

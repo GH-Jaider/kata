@@ -1,10 +1,10 @@
 <script>
-  import Mast from '../components/Mast.svelte';
-  import { db, cur, setSettings, exportBackup, importBackup, wipe } from '../lib/store.svelte.js';
-  import { toast, applyTheme } from '../lib/ui.svelte.js';
-  import * as L from '../lib/logic.js';
-  import { startTour } from '../lib/tour.js';
-  import { navigate } from '../lib/ui.svelte.js';
+  import Mast from '#components/Mast.svelte';
+  import { db, cur, setSettings, exportBackup, importBackup, wipe } from '#lib/store.svelte.js';
+  import { toast, applyTheme } from '#lib/ui.svelte.js';
+  import * as L from '#lib/logic.js';
+  import { startTour } from '#lib/tour.js';
+  import { navigate } from '#lib/ui.svelte.js';
 
   const sel = (key, values, label = v => String(v)) => ({ key, values, label });
   let confirm = $state(null);

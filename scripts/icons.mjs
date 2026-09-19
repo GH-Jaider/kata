@@ -1,5 +1,5 @@
 // Renders the PNG icons from icons/icon.svg and icons/icon-maskable.svg with headless Chrome. No dependencies.
-//   npm run icons
+//   pnpm icons
 
 import { spawn } from 'node:child_process';
 import { mkdtempSync, readFileSync, writeFileSync, rmSync } from 'node:fs';

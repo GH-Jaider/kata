@@ -1,13 +1,7 @@
 /* Kata · Poster system. Flat colour, giant type, almost no chrome.
    Paper canvas for content, one flat colour per block type, ink for the masthead and the primary action. */
 
-@font-face {
-  font-family: "Bricolage Grotesque";
-  src: url("/fonts/bricolage-latin.woff2") format("woff2");
-  font-weight: 200 800;
-  font-stretch: 75% 100%;
-  font-display: swap;
-}
+/* The @font-face lives in index.html so its URL stays relative to wherever the app is served from. */
 
 :root {
   --ink: #121212; --paper: #F5F1E6; --paper-2: #ECE7D9;

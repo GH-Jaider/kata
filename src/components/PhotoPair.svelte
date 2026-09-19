@@ -1,8 +1,8 @@
 <script>
   // First page next to the latest: the app's real feedback.
   import Thumb from './Thumb.svelte';
-  import Figure from '../lib/figures/Figure.svelte';
-  import { fmtDate } from '../lib/logic.js';
+  import Figure from '#lib/figures/Figure.svelte';
+  import { fmtDate } from '#lib/logic.js';
   let { pair = null, figure = 'page', latestLabel = 'Today', onopen } = $props();
 </script>
 

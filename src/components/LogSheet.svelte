@@ -1,9 +1,9 @@
 <script>
   // Practice done without the timer: exercise, count, minutes, medium, photos, a note.
   import Sheet from './Sheet.svelte';
-  import { db, cur, recordSession, addPhoto } from '../lib/store.svelte.js';
-  import { toast } from '../lib/ui.svelte.js';
-  import * as L from '../lib/logic.js';
+  import { db, cur, recordSession, addPhoto } from '#lib/store.svelte.js';
+  import { toast } from '#lib/ui.svelte.js';
+  import * as L from '#lib/logic.js';
 
   let { exerciseId = null, onclose } = $props();
   const units = [...cur.order, ...cur.parallel].map(id => L.unitById(cur, id));

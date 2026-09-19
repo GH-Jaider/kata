@@ -1,12 +1,12 @@
 <script>
-  import { run, elapsedMs, togglePause, setCount, setSkipped, countFor, nextBlock, finishRun, discardRun, addRunPhoto, markAlerted } from '../lib/run.svelte.js';
-  import { db, cur, addPhoto } from '../lib/store.svelte.js';
-  import { navigate, chime, toast, withTransition } from '../lib/ui.svelte.js';
-  import { cardFor } from '../lib/cards.js';
-  import Figure from '../lib/figures/Figure.svelte';
-  import { figureFor } from '../lib/figures/library.js';
-  import * as L from '../lib/logic.js';
-  import { startSessionTour, touredSession } from '../lib/tour.js';
+  import { run, elapsedMs, togglePause, setCount, setSkipped, countFor, nextBlock, finishRun, discardRun, addRunPhoto, markAlerted } from '#lib/run.svelte.js';
+  import { db, cur, addPhoto } from '#lib/store.svelte.js';
+  import { navigate, chime, toast, withTransition } from '#lib/ui.svelte.js';
+  import { cardFor } from '#lib/cards.js';
+  import Figure from '#lib/figures/Figure.svelte';
+  import { figureFor } from '#lib/figures/library.js';
+  import * as L from '#lib/logic.js';
+  import { startSessionTour, touredSession } from '#lib/tour.js';
   import { onMount } from 'svelte';
   import { fade, fly } from 'svelte/transition';
 

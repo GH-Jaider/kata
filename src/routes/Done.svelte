@@ -1,10 +1,10 @@
 <script>
-  import PhotoPair from '../components/PhotoPair.svelte';
-  import Viewer from '../components/Viewer.svelte';
-  import { db, cur, updateSession, setBlockCount } from '../lib/store.svelte.js';
-  import { navigate } from '../lib/ui.svelte.js';
-  import { figureFor } from '../lib/figures/library.js';
-  import * as L from '../lib/logic.js';
+  import PhotoPair from '#components/PhotoPair.svelte';
+  import Viewer from '#components/Viewer.svelte';
+  import { db, cur, updateSession, setBlockCount } from '#lib/store.svelte.js';
+  import { navigate } from '#lib/ui.svelte.js';
+  import { figureFor } from '#lib/figures/library.js';
+  import * as L from '#lib/logic.js';
 
   let { id } = $props();
   const s = $derived(db.sessions.find(x => x.id === id));

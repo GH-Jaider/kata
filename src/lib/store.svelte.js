@@ -1,7 +1,7 @@
 // App state (Svelte 5 runes) and persistence. Everything lives on this device; nothing leaves it.
 import { idb } from './idb.js';
 import { applySession, todayKey, uid } from './logic.js';
-import curriculum from '../../curricula/drawabox.json';
+import curriculum from '#curricula/drawabox.json';
 
 export const cur = curriculum;
 

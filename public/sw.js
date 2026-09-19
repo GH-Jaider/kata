@@ -12,7 +12,7 @@ self.addEventListener('fetch', e => {
       return res;
     } catch {
       const hit = await cache.match(req, { ignoreSearch: true });
-      return hit || (req.mode === 'navigate' ? cache.match('/') : Response.error());
+      return hit || (req.mode === 'navigate' ? cache.match(new URL('./', self.registration.scope).href) : Response.error());
     }
   }));
 });

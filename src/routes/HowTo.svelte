@@ -1,9 +1,9 @@
 <script>
   // How Kata is meant to be used: one screen per setup, snap-scrolled like a deck. A drawing, a title, two lines.
-  import Mast from '../components/Mast.svelte';
-  import { startTour } from '../lib/tour.js';
-  import { navigate } from '../lib/ui.svelte.js';
-  import { cur } from '../lib/store.svelte.js';
+  import Mast from '#components/Mast.svelte';
+  import { startTour } from '#lib/tour.js';
+  import { navigate } from '#lib/ui.svelte.js';
+  import { cur } from '#lib/store.svelte.js';
 
   const reduce = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
   let deck;
